@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
     <title>Brooklyn Public Library</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header class="header">
+        <h1 class="header__text">Brooklyn Public Library</h1>
+        <div class="header-wrap">
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-list-el"><a href="#about" class="nav-list-link">About</a></li>
+                    <li class="header-list-el"><a href="#favorites" class="nav-list-link">Favorites</a></li>
+                    <li class="header-list-el"><a href="" class="nav-list-link">Coffee shop</a></li>
+                    <li class="header-list-el"><a href="" class="nav-list-link">Contacts</a></li>
+                    <li class="header-list-el"><a href="" class="nav-list-link">Library Card</a></li>
+                </ul>
+            </nav>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="icon_profile">
+                <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
+                </g>
+            </svg>
+        </div>
+        </header>
+        <main class="main">
+            <section class="welcome" id="welcome">
+                <div class="welcome-text-wrap">
+                    <p class="welcome__text">Welcome&nbsp;<br>to the Brooklyn Library</p>
+                </div>
+            </section>
+            <section class="about" id="about">
+                <h2 class="about__h">About</h2>
+                <p class="about__text">The Brooklyn Library is a free workspace, 
+                    a large number of books and a cozy coffee shop inside</p>
+                <div class="about-image-wrapper">
+                    <img src="./assets/img/about/image 1_1.png" alt="library_photo" class="about__img">
+                    <img src="./assets/img/about/image 1_2.png" alt="library_photo" class="about__img">
+                    <img src="./assets/img/about/image 1_3.png" alt="library_photo" class="about__img">
+                </div>
+                <div class="paginator-wrapper">
+                    <div class="buttons">
+                        <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#BB945F"/>
+                        </svg>
+                        <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
+                        </svg>
+                        <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section class="favorites" id="favorites">
+                <h2 class="favorites__h">Favorites</h2>
+                <p class="favorites__text">Pick favorites of season</p>
+                <div class="selector-wrapper">
+                    <form class="selector-form" action="">
+                        <input type="radio" name="winter" id="winter">
+                        <label for="winter">Winter</label>
+                        <input type="radio" name="spring" id="spring">
+                        <label for="spring">Spring</label>
+                        <input type="radio" name="summer" id="summer">
+                        <label for="summer">Summer</label>
+                        <input type="radio" name="autumn" id="autumn">
+                        <label for="autumn">Autumn</label>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+
+        </footer>
+    </div>
 </body>
 </html>
