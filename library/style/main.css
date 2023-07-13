@@ -55,6 +55,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0;
+  list-style-type: none;
 }
 .header .header-nav .header-nav-list .nav-list-link {
   font-family: "Inter", sans-serif;
@@ -160,10 +161,65 @@ body {
   margin: 60px 0 0 0;
   color: #000000;
 }
-.main .favorites .selector-form {
+.main .favorites .selector-wrapper {
   display: flex;
+  row-gap: 90px;
   max-width: 700px;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 42px;
+}
+.main .favorites .selector-wrapper .selector-label {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000000;
+  position: relative;
+}
+.main .favorites .selector-wrapper .selector[type=radio] {
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+.main .favorites .selector-wrapper .selector[type=radio] + .selector-label::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: transparent;
+}
+.main .favorites .selector-wrapper .selector[type=radio] + .selector-label::before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7.5" stroke="black" stroke-width="2"/></svg>');
+  position: relative;
+  top: 3px;
+  margin-right: 20px;
+}
+.main .favorites .selector-wrapper .selector[type=radio]:checked + .selector-label:before {
+  content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7.5" stroke="black" stroke-width="2"/><circle cx="8.5" cy="8.5" r="3.5" fill="black"/></svg>');
+}
+.main .favorites .books-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  margin-top: 40px;
+  min-height: 1150px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer {
+  position: relative;
+  width: 590px;
+  height: 555px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner {
+  width: 550px;
+  height: 555px;
+  border: 1px solid #000000;
+}
+
+.footer {
+  background-color: aquamarine;
 }
 
 /*# sourceMappingURL=main.css.map */
