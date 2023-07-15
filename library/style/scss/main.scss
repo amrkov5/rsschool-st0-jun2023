@@ -118,7 +118,7 @@ body {
         .favorites__h {
             @extend %forum_h2;
             position: relative;
-            // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             text-align: center;
             margin: 0;
             &::after {
@@ -145,6 +145,7 @@ body {
                 @include inter_text;
                 color: $black;
                 position: relative;
+                cursor: pointer;
             }
             .selector[type="radio"] {
                 position: absolute;
@@ -176,7 +177,6 @@ body {
                 }
             }
         }
-        // sdf
         .books-wrapper {
             display: flex;
             justify-content: space-between;
@@ -189,11 +189,92 @@ body {
                 width: 590px;
                 height: 555px;
                 .book-wrapper-inner {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
                     width: 550px;
                     height: 555px;
                     border: 1px solid $black;
+                    padding: 15px 0 15px 20px;
+                    .book-card-h {
+                        @include forum_text;
+                        position: relative;
+                        letter-spacing: 2px;
+                        text-transform: capitalize;
+                        line-height: 40px;
+                        color: $black;
+                        margin: 0;                        
+                        &::after {
+                            content: "";
+                            position:absolute;
+                            width:60px;
+                            height: 1px;
+                            background-color: $sand;
+                            left: 0;
+                            top: 39px;
+                        }
+                    }
+                    .book-title-author {
+                        @include inter_text(15px, 700);
+                        margin-top: 20px;
+                        letter-spacing: 2px;
+                        color: $black;
+                        line-height: 40px;
+                        span {
+                            text-transform: uppercase;
+                        }
+                    }
+                    .book-description-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        flex-grow: 1;
+                        width: 365px;
+                        .book-description {
+                            @include inter_text(15px,400);
+                            line-height: 40px;
+                            letter-spacing: 2px;
+                            margin-top: 5px;
+                            text-transform: capitalize
+                        }
+                    }
+                    .buy-book-btn {
+                        @include inter_text(10px, 700);
+                        width: 75px;
+                        height: 30px;
+                        border-radius: 2px;
+                        border: 1px solid $dark;
+                        background-color: $white;
+                        line-height: normal;
+                        letter-spacing: 1px;
+                        transition: 0.3s ease-in-out;
+                        &:hover {
+                            background-color: $sand;
+                            border-color: $sand;
+                            cursor: pointer;
+                        }
+                    }
+                    .own-book-btn {
+                        @include inter_text(10px, 700);
+                        width: 75px;
+                        height: 30px;
+                        border-radius: 2px;
+                        color: $sand;
+                        border: 1px solid $sand;
+                        background-color: $white;
+                        line-height: normal;
+                        letter-spacing: 1px;
+                    }
+                    .book-pic {
+                        position: absolute;
+                        bottom: -1px;
+                        right: -40px;
+                    }
                 }
             }
+        }
+        .books-hidden {
+            display: none;
         }
     }
 }

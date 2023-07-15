@@ -142,6 +142,7 @@ body {
 }
 .main .favorites .favorites__h {
   position: relative;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   margin: 0;
 }
@@ -175,6 +176,7 @@ body {
   font-weight: 400;
   color: #000000;
   position: relative;
+  cursor: pointer;
 }
 .main .favorites .selector-wrapper .selector[type=radio] {
   position: absolute;
@@ -213,9 +215,106 @@ body {
   height: 555px;
 }
 .main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   width: 550px;
   height: 555px;
   border: 1px solid #000000;
+  padding: 15px 0 15px 20px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-card-h {
+  font-family: "Forum";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  line-height: 40px;
+  color: #000000;
+  margin: 0;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-card-h::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background-color: #BB945F;
+  left: 0;
+  top: 39px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-title-author {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  color: #000000;
+  line-height: 40px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-title-author span {
+  text-transform: uppercase;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 365px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-description-wrapper .book-description {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .buy-book-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background-color: #FFFFFF;
+  line-height: normal;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in-out;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .buy-book-btn:hover {
+  background-color: #BB945F;
+  border-color: #BB945F;
+  cursor: pointer;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .own-book-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  color: #BB945F;
+  border: 1px solid #BB945F;
+  background-color: #FFFFFF;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+.main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-pic {
+  position: absolute;
+  bottom: -1px;
+  right: -40px;
+}
+.main .favorites .books-hidden {
+  display: none;
 }
 
 .footer {
