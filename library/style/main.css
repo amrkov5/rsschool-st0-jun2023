@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap");
-.main .favorites .favorites__h, .main .about .about__h {
+.main .section__h {
   font-family: "Forum";
   font-size: 40px;
   font-style: normal;
@@ -94,24 +94,24 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
-.main .about {
-  min-height: 837px;
-  background-color: #FFFFFF;
-  padding: 20px 20px 40px 20px;
-}
-.main .about .about__h {
+.main .section__h {
   position: relative;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   margin: 0;
 }
-.main .about .about__h::after {
+.main .section__h::after {
   content: "";
   position: absolute;
   top: 60px;
   left: calc(50% - 25px);
   width: 50px;
   border: 1px solid #0C0C0E;
+}
+.main .about {
+  min-height: 837px;
+  background-color: #FFFFFF;
+  padding: 20px 20px 40px 20px;
 }
 .main .about .about__text {
   font-family: "Inter", sans-serif;
@@ -139,20 +139,6 @@ body {
 .main .favorites {
   padding: 15px 20px 40px 20px;
   background-color: #FFFFFF;
-}
-.main .favorites .favorites__h {
-  position: relative;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  margin: 0;
-}
-.main .favorites .favorites__h::after {
-  content: "";
-  position: absolute;
-  top: 60px;
-  left: calc(50% - 25px);
-  width: 50px;
-  border: 1px solid #0C0C0E;
 }
 .main .favorites .favorites__text {
   font-family: "Inter", sans-serif;
@@ -315,6 +301,154 @@ body {
 }
 .main .favorites .books-hidden {
   display: none;
+}
+.main .coffee-shop {
+  min-height: 841px;
+  padding: 20px 20px 40px 20px;
+  background-color: #FFFFFF;
+}
+.main .coffee-shop .shop-text {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 61.5px;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+.main .coffee-shop .shop-text .up-text {
+  text-transform: uppercase;
+}
+.main .coffee-shop .shop-text .low-text {
+  text-transform: lowercase;
+}
+.main .coffee-shop .menu-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices,
+.main .coffee-shop .menu-wrapper .desserts-prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 520px;
+  width: 438px;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices .price-h,
+.main .coffee-shop .menu-wrapper .desserts-prices .price-h {
+  font-family: "Forum";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  color: #BB945F;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices .price-wrapper,
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices .price-wrapper .item,
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper .item {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices .price-wrapper .price-line,
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper .price-line {
+  position: absolute;
+  right: 82px;
+  top: calc(50% - 1px);
+  width: 100px;
+  height: 1px;
+  background-color: #BB945F;
+}
+.main .coffee-shop .menu-wrapper .coffee-prices .price-wrapper .price,
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper .price {
+  font-family: "Forum";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+.main .coffee-shop .menu-wrapper .desserts-prices {
+  width: 464px;
+}
+.main .coffee-shop .menu-wrapper .desserts-prices .price-h {
+  text-align: right;
+}
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper {
+  column-gap: 59px;
+  justify-content: end;
+  align-items: center;
+}
+.main .coffee-shop .menu-wrapper .desserts-prices .price-wrapper .price-line {
+  position: static;
+  width: 100px;
+  height: 1px;
+  background-color: #BB945F;
+}
+.main .contacts {
+  min-height: 575px;
+  padding: 20px 20px 40px 20px;
+  background-color: #FFFFFF;
+}
+.main .contacts .contacts-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 41px;
+}
+.main .contacts .contacts-info .contacts-wrapper .contacts-group {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 160px;
+}
+.main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper .contacts-text {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin: 0;
+}
+.main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper .contacts-text a {
+  text-decoration: none;
+  color: #000000;
+}
+.main .contacts .contacts-info .contacts-wrapper .mail {
+  margin: 0 0 20px 0;
+  height: auto;
+}
+.main .contacts .contacts-info .map-wrapper {
+  width: 696px;
+  height: 414px;
+  margin: 20px 0 0 0;
 }
 
 .footer {

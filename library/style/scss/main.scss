@@ -72,25 +72,25 @@ body {
             }
         }
     }
+    .section__h {
+        @extend %forum_h2;
+        position: relative;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        margin: 0;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: calc(50% - 25px);
+            width: 50px;
+            border: 1px solid $dark;
+        }
+    }
     .about {
         min-height: 837px;
         background-color: $white;
         padding: 20px 20px 40px 20px;
-        .about__h {
-            @extend %forum_h2;
-            position: relative;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-align: center;
-            margin: 0;
-            &::after {
-                content: "";
-                position: absolute;
-                top: 60px;
-                left: calc(50% - 25px);
-                width: 50px;
-                border: 1px solid $dark;
-            }
-        }
         .about__text {
             @include inter_text;
             text-align: center;
@@ -115,21 +115,6 @@ body {
     .favorites {
         padding: 15px 20px 40px 20px;
         background-color: $white;
-        .favorites__h {
-            @extend %forum_h2;
-            position: relative;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            text-align: center;
-            margin: 0;
-            &::after {
-                content: "";
-                position: absolute;
-                top: 60px;
-                left: calc(50% - 25px);
-                width: 50px;
-                border: 1px solid $dark;
-            }
-        }
         .favorites__text {
             @include inter_text(20px,700);
             margin: 60px 0 0 0;
@@ -275,6 +260,138 @@ body {
         }
         .books-hidden {
             display: none;
+        }
+    }
+    .coffee-shop {
+        min-height: 841px;
+        padding: 20px 20px 40px 20px;
+        background-color: $white;
+        .shop-text {
+            @include inter_text;
+            margin-top: 61.5px;
+            text-align: center;
+            line-height: 40px;
+            letter-spacing: 2px;
+            .up-text {
+                text-transform: uppercase;
+            }
+            .low-text {
+                text-transform: lowercase;
+            }
+        }
+        .menu-wrapper {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            .coffee-prices,
+            .desserts-prices {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 520px;
+                width: 438px;
+                .price-h {
+                    @include forum_text(40px,40px);
+                    color: $sand;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                }
+                .price-wrapper {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    .item {
+                        @include inter_text;
+                        margin: 0;
+                        // width: 196px;
+                        line-height: 40px; /* 200% */
+                        letter-spacing: 2px;
+                        text-transform: capitalize;
+                    }
+                    .price-line {
+                        position: absolute;
+                        right: 82px;
+                        top: calc(50% - 1px);
+                        width: 100px;
+                        height: 1px;
+                        background-color: $sand;
+                    }
+                    .price {
+                        @include forum_text;
+                        margin: 0;
+                        letter-spacing: 2px;
+                    }
+                }
+            }
+            .desserts-prices {
+                width: 464px;
+                .price-h {
+                    text-align: right;
+                }
+                .price-wrapper {
+                    column-gap: 59px;
+                    justify-content: end;
+                    align-items: center;
+
+                    // text-align: right;
+                    .price-line {
+                        position:static;
+                        // right: 82px;
+                        // top: calc(50% - 1px);
+                        width: 100px;
+                        height: 1px;
+                        background-color: $sand;
+                    }
+                }
+            }
+            
+        }
+    }
+    .contacts {
+        min-height: 575px;
+        padding: 20px 20px 40px 20px;
+        background-color: $white;
+        .contacts-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 41px;
+            .contacts-wrapper {
+                .contacts-group {
+                    @include inter_text(20px,700);
+                    line-height: 40px; /* 200% */
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                }
+                .contact-text-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                    height: 160px;
+                    .contacts-text {
+                        @include inter_text;
+                        line-height: 40px; /* 200% */
+                        letter-spacing: 2px;
+                        text-transform: capitalize;
+                        margin: 0;
+                        a {
+                            text-decoration: none;
+                            color: $black;
+                        }
+                    }
+                }
+                .mail {
+                    margin: 0 0 20px 0;
+                    height: auto;
+                }
+            }
+            .map-wrapper {
+                width: 696px;
+                height: 414px;
+                margin: 20px 0 0 0;
+            }
+
         }
     }
 }
