@@ -394,6 +394,81 @@ body {
 
         }
     }
+    .library-cards {
+        min-height: 614px;
+        padding: 20px 20px 40px 20px;
+        background-color: $white;
+        .cards-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 62px;
+            .find-card-wrapper {
+                width: 600px;
+                height: 386px;
+                .find-card {
+                    @include inter_text(30px);
+                    letter-spacing: 0.6px;
+                    margin: 0 0 31px 0;
+                    text-align: center;
+                }
+                .find-card-form-outer {
+                    height: 386px;
+                    border: 3px solid $sand;
+                    padding: 17px 17px 30px 17px;
+                    box-shadow: 0px 3px 5px #8E8E8E;
+                    .find-card-form-inner {
+                        padding: 20px 20px 25px 20px;
+                        background-color: $sand;
+                        height: 272px;
+                        .form-text {
+                            @include forum_text(30px,50px);
+                            letter-spacing: 0.6px;
+                            margin: 0 0 20px 0;
+                        }
+                        .form-input {
+                            @include forum_text(30px,50px);
+                            width: 520px;
+                            height: 66px;
+                            border-radius: 10px;
+                            background-color: $white;
+                            letter-spacing: 0.6px;
+                            color: #8E8E8E;
+                            text-indent: 18px;
+                            border: none;
+                        }
+                        .card-number {
+                            margin-top: 25px;
+                        }
+                    }
+                    .chk_card {
+                        @include inter_text(20px,700);
+                        display: block;
+                        width: 242px;
+                        height: 44px;
+                        margin: 20px auto;
+                        letter-spacing: 1px;
+                        border-radius: 2px;
+                        border: 1px solid $dark;
+                        color: $dark;
+                        background-color: $white;
+                    }
+                }
+            }
+            .get-card {
+                @include forum_text(30px,normal);
+                text-align: right;
+                letter-spacing: 0.6px;
+                margin: 0;
+            }
+            .get-card-text {
+                @include inter_text;
+                margin-top: 34px;
+                letter-spacing: 0.4px;
+                text-align: right;
+                line-height: 40px; /* 200% */
+            }
+        }
+    }
 }
 .footer {
     background-color: aquamarine;

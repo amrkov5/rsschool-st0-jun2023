@@ -450,6 +450,102 @@ body {
   height: 414px;
   margin: 20px 0 0 0;
 }
+.main .library-cards {
+  min-height: 614px;
+  padding: 20px 20px 40px 20px;
+  background-color: #FFFFFF;
+}
+.main .library-cards .cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 62px;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper {
+  width: 600px;
+  height: 386px;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card {
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  margin: 0 0 31px 0;
+  text-align: center;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer {
+  height: 386px;
+  border: 3px solid #BB945F;
+  padding: 17px 17px 30px 17px;
+  box-shadow: 0px 3px 5px #8E8E8E;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner {
+  padding: 20px 20px 25px 20px;
+  background-color: #BB945F;
+  height: 272px;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .form-text {
+  font-family: "Forum";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  margin: 0 0 20px 0;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .form-input {
+  font-family: "Forum";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  width: 520px;
+  height: 66px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  letter-spacing: 0.6px;
+  color: #8E8E8E;
+  text-indent: 18px;
+  border: none;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .card-number {
+  margin-top: 25px;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .chk_card {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  display: block;
+  width: 242px;
+  height: 44px;
+  margin: 20px auto;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  color: #0C0C0E;
+  background-color: #FFFFFF;
+}
+.main .library-cards .cards-wrapper .get-card {
+  font-family: "Forum";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: right;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+.main .library-cards .cards-wrapper .get-card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 34px;
+  letter-spacing: 0.4px;
+  text-align: right;
+  line-height: 40px; /* 200% */
+}
 
 .footer {
   background-color: aquamarine;
