@@ -30,7 +30,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  height: 90px;
   background-color: #0C0C0E;
 }
 .header .header__text {
@@ -48,12 +47,16 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.header .header-wrap .icon-profile {
+  cursor: pointer;
+}
 .header .header-nav {
   flex-basis: 584px;
 }
 .header .header-nav .header-nav-list {
   display: flex;
   justify-content: space-between;
+  column-gap: 30px;
   padding: 0;
   list-style-type: none;
 }
@@ -65,6 +68,20 @@ body {
   color: #FFFFFF;
   text-decoration: none;
   line-height: 50px;
+  position: relative;
+}
+.header .header-nav .header-nav-list .nav-list-link:hover::after {
+  width: 100%;
+}
+.header .header-nav .header-nav-list .nav-list-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
 
 .main .welcome {
@@ -440,6 +457,20 @@ body {
 .main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper .contacts-text a {
   text-decoration: none;
   color: #000000;
+  position: relative;
+}
+.main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper .contacts-text a:hover::after {
+  width: 100%;
+}
+.main .contacts .contacts-info .contacts-wrapper .contact-text-wrapper .contacts-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: 0.3s ease-in-out;
 }
 .main .contacts .contacts-info .contacts-wrapper .mail {
   margin: 0 0 20px 0;
@@ -611,8 +642,12 @@ body {
   justify-content: space-between;
   width: 102px;
   margin: 4px 0 0 1px;
+  padding: 0;
 }
-.footer .footer-text-icons .footer-icons img {
+.footer .footer-text-icons .footer-icons li {
+  list-style-type: none;
+}
+.footer .footer-text-icons .footer-icons li img {
   width: 24px;
   height: 24px;
 }
