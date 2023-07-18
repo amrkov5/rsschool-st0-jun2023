@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 body {
+    // background-color: rgb(250, 16, 16);
     background-color: rgb(203, 200, 200);
+
 }
 .container {
     display: grid;
@@ -81,10 +83,10 @@ body {
         &::after {
             content: "";
             position: absolute;
-            top: 60px;
+            top: 59.5px;
             left: calc(50% - 25px);
-            width: 50px;
-            border: 1px solid $dark;
+            width: 49px;
+            border: 0.5px solid $dark;
         }
     }
     .about {
@@ -117,7 +119,7 @@ body {
         background-color: $white;
         .favorites__text {
             @include inter_text(20px,700);
-            margin: 60px 0 0 0;
+            margin: 61px 0 0 0;
             color: $black;
         }
         .selector-wrapper {
@@ -180,7 +182,7 @@ body {
                     width: 550px;
                     height: 555px;
                     border: 1px solid $black;
-                    padding: 15px 0 15px 20px;
+                    padding: 14px 0 15px 19px;
                     .book-card-h {
                         @include forum_text;
                         position: relative;
@@ -395,7 +397,7 @@ body {
         }
     }
     .library-cards {
-        min-height: 614px;
+        min-height: 613px;
         padding: 20px 20px 40px 20px;
         background-color: $white;
         .cards-wrapper {
@@ -408,7 +410,7 @@ body {
                 .find-card {
                     @include inter_text(30px);
                     letter-spacing: 0.6px;
-                    margin: 0 0 31px 0;
+                    margin: 0 0 30px 0;
                     text-align: center;
                 }
                 .find-card-form-outer {
@@ -451,25 +453,111 @@ body {
                         border: 1px solid $dark;
                         color: $dark;
                         background-color: $white;
+                        transition: 0.3s ease-in-out;
+                        &:hover {
+                            background-color: $sand;
+                            border-color: $sand;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
-            .get-card {
-                @include forum_text(30px,normal);
+            .get-card-wrapper {
                 text-align: right;
-                letter-spacing: 0.6px;
-                margin: 0;
-            }
-            .get-card-text {
-                @include inter_text;
-                margin-top: 34px;
-                letter-spacing: 0.4px;
-                text-align: right;
-                line-height: 40px; /* 200% */
+                .get-card {
+                    @include forum_text(30px,normal);
+                    text-align: right;
+                    letter-spacing: 0.6px;
+                    margin: 0;
+                }
+                .get-card-text {
+                    @include inter_text;
+                    margin-top: 34px;
+                    letter-spacing: 0.4px;
+                    text-align: right;
+                    line-height: 40px; /* 200% */
+                }
+                .get-card-btn {
+                    @include inter_text(10px,700);
+                    display: inline-block;
+                    width: 75px;
+                    height: 30px;
+                    background-color: $white;
+                    border-radius: 2px;
+                    border: 1px solid #0C0C0E;
+                    letter-spacing: 1px;
+                    margin: 15px 0 0 16px;
+                    transition: 0.3s ease-in-out;
+                    line-height: 10px;
+                    &:hover {
+                        background-color: $sand;
+                        border-color: $sand;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
 }
 .footer {
-    background-color: aquamarine;
+    background-color: $dark;
+    padding: 20px 20px 44px 20px;
+    color: $white;
+    .footer-text-icons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        align-items: center;
+        span {
+            @include inter_text(15px, 400);
+            line-height: 20px;
+            color: $white;
+            &:last-child {
+                text-align: right;
+            }
+            a {
+                text-decoration: none;
+                color: $white;
+                &:visited {
+                    color: $white;
+                }
+            }
+
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: space-between;
+            width: 102px;
+            margin: 4px 0 0 1px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    .footer-line {
+        height: 1px;
+        background-color: $white;
+        margin: 29.5px 0 45px 0;
+    }
+    .footer-rsschool-text {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        .rsschool {
+            position: absolute;
+            left: calc(50% - 150px)
+        }
+        .rsschool-text {
+            @include inter_text;
+            line-height: 20px;
+            letter-spacing: 2px;
+        }
+        a {
+            text-decoration: none;
+            &:visited {
+                color: $white;
+            }
+        }
+    }
 }

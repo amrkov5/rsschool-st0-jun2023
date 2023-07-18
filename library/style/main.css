@@ -103,10 +103,10 @@ body {
 .main .section__h::after {
   content: "";
   position: absolute;
-  top: 60px;
+  top: 59.5px;
   left: calc(50% - 25px);
-  width: 50px;
-  border: 1px solid #0C0C0E;
+  width: 49px;
+  border: 0.5px solid #0C0C0E;
 }
 .main .about {
   min-height: 837px;
@@ -145,7 +145,7 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  margin: 60px 0 0 0;
+  margin: 61px 0 0 0;
   color: #000000;
 }
 .main .favorites .selector-wrapper {
@@ -207,7 +207,7 @@ body {
   width: 550px;
   height: 555px;
   border: 1px solid #000000;
-  padding: 15px 0 15px 20px;
+  padding: 14px 0 15px 19px;
 }
 .main .favorites .books-wrapper .book-wrapper-outer .book-wrapper-inner .book-card-h {
   font-family: "Forum";
@@ -451,7 +451,7 @@ body {
   margin: 20px 0 0 0;
 }
 .main .library-cards {
-  min-height: 614px;
+  min-height: 613px;
   padding: 20px 20px 40px 20px;
   background-color: #FFFFFF;
 }
@@ -470,7 +470,7 @@ body {
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.6px;
-  margin: 0 0 31px 0;
+  margin: 0 0 30px 0;
   text-align: center;
 }
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer {
@@ -525,8 +525,17 @@ body {
   border: 1px solid #0C0C0E;
   color: #0C0C0E;
   background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
-.main .library-cards .cards-wrapper .get-card {
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .chk_card:hover {
+  background-color: #BB945F;
+  border-color: #BB945F;
+  cursor: pointer;
+}
+.main .library-cards .cards-wrapper .get-card-wrapper {
+  text-align: right;
+}
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card {
   font-family: "Forum";
   font-size: 30px;
   font-style: normal;
@@ -536,7 +545,7 @@ body {
   letter-spacing: 0.6px;
   margin: 0;
 }
-.main .library-cards .cards-wrapper .get-card-text {
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-text {
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -546,9 +555,94 @@ body {
   text-align: right;
   line-height: 40px; /* 200% */
 }
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  display: inline-block;
+  width: 75px;
+  height: 30px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  letter-spacing: 1px;
+  margin: 15px 0 0 16px;
+  transition: 0.3s ease-in-out;
+  line-height: 10px;
+}
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn:hover {
+  background-color: #BB945F;
+  border-color: #BB945F;
+  cursor: pointer;
+}
 
 .footer {
-  background-color: aquamarine;
+  background-color: #0C0C0E;
+  padding: 20px 20px 44px 20px;
+  color: #FFFFFF;
+}
+.footer .footer-text-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.footer .footer-text-icons span {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.footer .footer-text-icons span:last-child {
+  text-align: right;
+}
+.footer .footer-text-icons span a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.footer .footer-text-icons span a:visited {
+  color: #FFFFFF;
+}
+.footer .footer-text-icons .footer-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 102px;
+  margin: 4px 0 0 1px;
+}
+.footer .footer-text-icons .footer-icons img {
+  width: 24px;
+  height: 24px;
+}
+.footer .footer-line {
+  height: 1px;
+  background-color: #FFFFFF;
+  margin: 29.5px 0 45px 0;
+}
+.footer .footer-rsschool-text {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+.footer .footer-rsschool-text .rsschool {
+  position: absolute;
+  left: calc(50% - 150px);
+}
+.footer .footer-rsschool-text .rsschool-text {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+.footer .footer-rsschool-text a {
+  text-decoration: none;
+}
+.footer .footer-rsschool-text a:visited {
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=main.css.map */
