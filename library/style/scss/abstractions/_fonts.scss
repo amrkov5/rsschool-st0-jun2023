@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap');
+
+$forum: 'Forum';
+$inter: 'Inter', sans-serif;
+
+%forum_h2 {
+    font-family: $forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+@mixin inter_text($size:20px,$weight:400) {
+    font-family: $inter;
+    font-size: $size;
+    font-style: normal;
+    font-weight: $weight;
+}
+@mixin forum_text($size:20px,$height:40px) {
+    font-family: $forum;
+    font-size: $size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: $height;
+}
