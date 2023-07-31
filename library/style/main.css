@@ -201,6 +201,9 @@ body {
   top: 3px;
   margin-right: 20px;
 }
+.main .favorites .selector-wrapper .selector[type=radio]:checked + .selector-label {
+  font-weight: 700;
+}
 .main .favorites .selector-wrapper .selector[type=radio]:checked + .selector-label:before {
   content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7.5" stroke="black" stroke-width="2"/><circle cx="8.5" cy="8.5" r="3.5" fill="black"/></svg>');
 }
@@ -633,9 +636,23 @@ body {
 .footer .footer-text-icons span a {
   text-decoration: none;
   color: #FFFFFF;
+  position: relative;
 }
 .footer .footer-text-icons span a:visited {
   color: #FFFFFF;
+}
+.footer .footer-text-icons span a:hover::after {
+  width: 100%;
+}
+.footer .footer-text-icons span a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
 .footer .footer-text-icons .footer-icons {
   display: flex;
@@ -650,6 +667,10 @@ body {
 .footer .footer-text-icons .footer-icons li img {
   width: 24px;
   height: 24px;
+  transition: transform 0.3s ease;
+}
+.footer .footer-text-icons .footer-icons li img:hover {
+  transform: scale(1.2);
 }
 .footer .footer-line {
   height: 1px;
@@ -674,11 +695,25 @@ body {
   letter-spacing: 2px;
 }
 .footer .footer-rsschool-text a {
+  position: relative;
   text-decoration: none;
   color: #FFFFFF;
 }
 .footer .footer-rsschool-text a:visited {
   color: #FFFFFF;
+}
+.footer .footer-rsschool-text a:hover::after {
+  width: 100%;
+}
+.footer .footer-rsschool-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */
