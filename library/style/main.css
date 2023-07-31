@@ -633,9 +633,23 @@ body {
 .footer .footer-text-icons span a {
   text-decoration: none;
   color: #FFFFFF;
+  position: relative;
 }
 .footer .footer-text-icons span a:visited {
   color: #FFFFFF;
+}
+.footer .footer-text-icons span a:hover::after {
+  width: 100%;
+}
+.footer .footer-text-icons span a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
 .footer .footer-text-icons .footer-icons {
   display: flex;
@@ -650,6 +664,10 @@ body {
 .footer .footer-text-icons .footer-icons li img {
   width: 24px;
   height: 24px;
+  transition: transform 0.3s ease;
+}
+.footer .footer-text-icons .footer-icons li img:hover {
+  transform: scale(1.2);
 }
 .footer .footer-line {
   height: 1px;
@@ -674,11 +692,25 @@ body {
   letter-spacing: 2px;
 }
 .footer .footer-rsschool-text a {
+  position: relative;
   text-decoration: none;
   color: #FFFFFF;
 }
 .footer .footer-rsschool-text a:visited {
   color: #FFFFFF;
+}
+.footer .footer-rsschool-text a:hover::after {
+  width: 100%;
+}
+.footer .footer-rsschool-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */

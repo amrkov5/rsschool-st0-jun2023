@@ -551,8 +551,23 @@ body {
             a {
                 text-decoration: none;
                 color: $white;
+                position: relative;
                 &:visited {
                     color: $white;
+                }
+                &:hover::after {
+                    width: 100%;
+                    // transition: width 0.3s ease-in-out;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -5px;
+                    width: 0;
+                    height: 2px;
+                    background-color: $white;
+                    transition: 0.3s ease-in-out;
                 }
             }
 
@@ -568,6 +583,10 @@ body {
             img {
                 width: 24px;
                 height: 24px;
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
             }
             
@@ -592,10 +611,25 @@ body {
             letter-spacing: 2px;
         }
         a {
+            position: relative;
             text-decoration: none;
             color: $white;
             &:visited {
                 color: $white;
+            }
+            &:hover::after {
+                width: 100%;
+                // transition: width 0.3s ease-in-out;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 0;
+                height: 2px;
+                background-color: $white;
+                transition: 0.3s ease-in-out;
             }
         }
     }
