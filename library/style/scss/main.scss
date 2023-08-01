@@ -141,46 +141,65 @@ body {
             color: $black;
         }
         .selector-wrapper {
-            display: flex;
-            row-gap: 90px;
-            max-width: 700px;
-            justify-content: space-between;
-            margin-top: 42px;
-            .selector-label {
-                @include inter_text;
-                color: $black;
-                position: relative;
-                cursor: pointer;
+            display:flex;
+            justify-content:space-between;
+            margin-top: 36px;
+            max-width:712px;
+            // flex-basis: 750px;
+            .selector {
+                display:none;
             }
-            .selector[type="radio"] {
-                position: absolute;
-                display: none;
-                opacity: 0;
-                + .selector-label {
+            .selector-wrap {
+                width: 135px;
+                display: flex;
+                align-items: center;
+                &:last-child {
+                    padding-left: 11px
+                }
+                .label {
+                    @include inter_text;
+                    padding: 5px 5px 5px 0px;
+                    cursor: pointer;
+                    position:relative;
+                    // 
+                    // text-align: right;
+                    &::before {
+                        content: "";
+                        position:relative;
+                        display: inline-block;
+                        margin-right:20px;
+                        top:4px;
+                        left:0;
+                        width:13px;
+                        height:13px;
+                        border: 2px solid black;
+                        border-radius:50%;
+                    }
                     &::after {
                         content: "";
-                        position: absolute;
-                        top: -5px;
-                        left: -5px;
-                        right: -5px;
-                        bottom: -5px;
-                        background-color: transparent;
-                    }
-                    &::before{
-                        content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7.5" stroke="black" stroke-width="2"/></svg>');
-                        position: relative;
-                        top: 3px;
-                        margin-right: 20px;
-                    }
-                }
-                &:checked {
-                    + .selector-label {
-                        font-weight: 700;
-                        &:before {
-                            content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7.5" stroke="black" stroke-width="2"/><circle cx="8.5" cy="8.5" r="3.5" fill="black"/></svg>');
-                        }
+                        position:absolute;
+                        top:16px;
+                        left:5px;
+                        display: inline-block;
+                        width:7px;
+                        height:7px;
+                        background-color: black;
+                        border-radius:50%;
+                        opacity:0;
+                        transform: scale(0);
+                        transition: 0.3s ease-in-out;
                     }
                 }
+                .selector:checked + .label  {
+                    // transform: scale(2);
+                    font-weight: 700;
+                }
+                .selector:checked +.label::after {
+                    opacity:1;
+                    width:7px;
+                    height:7px;
+                    transform: scale(1);
+                }      
             }
         }
         .books-wrapper {
@@ -188,7 +207,7 @@ body {
             justify-content: space-between;
             flex-wrap: wrap;
             row-gap: 40px;
-            margin-top: 40px;
+            margin-top: 36px;
             min-height: 1150px;
             .book-wrapper-outer {
                 position: relative;
