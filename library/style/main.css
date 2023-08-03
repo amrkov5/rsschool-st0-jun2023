@@ -21,7 +21,8 @@ body {
 .container {
   display: grid;
   grid-template-rows: 90px 1fr 250px;
-  width: 1440px;
+  max-width: 1440px;
+  min-width: 640px;
   margin: 0 auto;
 }
 
@@ -46,6 +47,11 @@ body {
   flex-basis: 652px;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  .header .header-wrap {
+    display: none;
+  }
 }
 .header .header-wrap .icon-profile {
   cursor: pointer;
@@ -87,7 +93,7 @@ body {
 .main .welcome {
   position: relative;
   background-image: url("../assets/img/welcome/Welcome_bg.png");
-  background-size: contain;
+  background-size: cover;
   min-height: 600px;
 }
 .main .welcome .welcome-text-wrap {
@@ -129,6 +135,7 @@ body {
   min-height: 837px;
   background-color: #FFFFFF;
   padding: 20px 20px 40px 20px;
+  width: 100%;
 }
 .main .about .about__text {
   font-family: "Inter", sans-serif;
@@ -142,13 +149,54 @@ body {
 }
 .main .about .about-image-wrapper {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
   justify-content: space-between;
+  height: 560px;
+}
+@media screen and (max-width: 1410px) {
+  .main .about .about-image-wrapper {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .main .about .about-image-wrapper {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .main .about .about-image-wrapper .about__img:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main .about .about-image-wrapper .about__img:nth-child(2) {
+    display: none;
+  }
 }
 .main .about .buttons {
   display: flex;
   justify-content: space-between;
-  width: 78px;
+  width: fit-content;
   margin: 35px auto 0 auto;
+}
+@media screen and (max-width: 1410px) {
+  .main .about .buttons {
+    margin-top: 20px;
+  }
+}
+.main .about .buttons .btn_hidden {
+  display: none;
+}
+@media screen and (max-width: 1410px) {
+  .main .about .buttons .btn_hidden:nth-child(4) {
+    display: block;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main .about .buttons .btn_hidden:nth-child(5) {
+    display: block;
+  }
 }
 .main .about .buttons .paginator:hover {
   cursor: pointer;
@@ -229,10 +277,16 @@ body {
 .main .favorites .books-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   row-gap: 40px;
   margin-top: 36px;
   min-height: 1150px;
+}
+@media screen and (max-width: 1237px) {
+  .main .favorites .books-wrapper {
+    justify-content: center;
+  }
 }
 .main .favorites .books-wrapper .book-wrapper-outer {
   position: relative;
@@ -343,7 +397,7 @@ body {
 }
 .main .coffee-shop {
   min-height: 841px;
-  padding: 20px 20px 40px 20px;
+  padding: 20px 19px 40px 19px;
   background-color: #FFFFFF;
 }
 .main .coffee-shop .shop-text {
@@ -366,6 +420,11 @@ body {
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 965px) {
+  .main .coffee-shop .menu-wrapper {
+    flex-direction: column;
+  }
 }
 .main .coffee-shop .menu-wrapper .coffee-prices,
 .main .coffee-shop .menu-wrapper .desserts-prices {
@@ -425,6 +484,12 @@ body {
 .main .coffee-shop .menu-wrapper .desserts-prices {
   width: 464px;
 }
+@media (max-width: 965px) {
+  .main .coffee-shop .menu-wrapper .desserts-prices {
+    align-self: flex-end;
+    margin-top: 40px;
+  }
+}
 .main .coffee-shop .menu-wrapper .desserts-prices .price-h {
   text-align: right;
 }
@@ -448,6 +513,12 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 41px;
+}
+@media screen and (max-width: 1260px) {
+  .main .contacts .contacts-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .main .contacts .contacts-info .contacts-wrapper .contacts-group {
   font-family: "Inter", sans-serif;
@@ -503,6 +574,12 @@ body {
   height: 414px;
   margin: 20px 0 0 0;
 }
+@media screen and (max-width: 1260px) {
+  .main .contacts .contacts-info .map-wrapper {
+    margin-top: 80px;
+    align-self: center;
+  }
+}
 .main .library-cards {
   min-height: 613px;
   padding: 20px 20px 40px 20px;
@@ -513,9 +590,15 @@ body {
   justify-content: space-between;
   margin-top: 62px;
 }
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 21px;
+  }
+}
 .main .library-cards .cards-wrapper .find-card-wrapper {
   width: 600px;
-  height: 386px;
 }
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card {
   font-family: "Inter", sans-serif;
@@ -587,6 +670,13 @@ body {
 }
 .main .library-cards .cards-wrapper .get-card-wrapper {
   text-align: right;
+  max-width: 456px;
+}
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper .get-card-wrapper {
+    text-align: center;
+    max-width: 600px;
+  }
 }
 .main .library-cards .cards-wrapper .get-card-wrapper .get-card {
   font-family: "Forum";
@@ -598,6 +688,11 @@ body {
   letter-spacing: 0.6px;
   margin: 0;
 }
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper .get-card-wrapper .get-card {
+    text-align: center;
+  }
+}
 .main .library-cards .cards-wrapper .get-card-wrapper .get-card-text {
   font-family: "Inter", sans-serif;
   font-size: 20px;
@@ -607,6 +702,23 @@ body {
   letter-spacing: 0.4px;
   text-align: right;
   line-height: 40px; /* 200% */
+}
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper .get-card-wrapper .get-card-text {
+    text-align: center;
+    margin-top: 39px;
+  }
+}
+.main .library-cards .cards-wrapper .get-card-wrapper .btn-wrapper {
+  width: 171px;
+  margin: 35px 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper .get-card-wrapper .btn-wrapper {
+    margin: 15px auto 0 auto;
+  }
 }
 .main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn {
   font-family: "Inter", sans-serif;
@@ -620,7 +732,6 @@ body {
   border-radius: 2px;
   border: 1px solid #0C0C0E;
   letter-spacing: 1px;
-  margin: 15px 0 0 16px;
   transition: 0.3s ease-in-out;
   line-height: 10px;
 }
@@ -629,10 +740,15 @@ body {
   border-color: #BB945F;
   cursor: pointer;
 }
+@media screen and (max-width: 1100px) {
+  .main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn {
+    margin-top: 20.5px;
+  }
+}
 
 .footer {
   background-color: #0C0C0E;
-  padding: 20px 20px 44px 20px;
+  padding: 20px 20px 44px 19px;
   color: #FFFFFF;
 }
 .footer .footer-text-icons {
@@ -704,6 +820,11 @@ body {
 .footer .footer-rsschool-text .rsschool {
   position: absolute;
   left: calc(50% - 150px);
+}
+@media screen and (max-width: 800px) {
+  .footer .footer-rsschool-text .rsschool {
+    position: fixed;
+  }
 }
 .footer .footer-rsschool-text .rsschool-text {
   font-family: "Inter", sans-serif;

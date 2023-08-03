@@ -12,7 +12,8 @@ body {
 .container {
     display: grid;
     grid-template-rows: 90px 1fr 250px;
-    width: 1440px;
+    max-width: 1440px;
+    min-width: 640px;
     margin: 0 auto;
 }
 .header {
@@ -32,6 +33,10 @@ body {
         flex-basis: 652px;
         align-items: center;
         justify-content: space-between;
+        @media screen and (max-width:1024px) {
+            display: none;
+            
+        }
         .icon-profile {
             cursor: pointer;
         }
@@ -72,7 +77,7 @@ body {
     .welcome {
         position: relative;
         background-image: url("../assets/img/welcome/Welcome_bg.png");
-        background-size: contain;
+        background-size: cover;
         min-height: 600px;
         .welcome-text-wrap {
             position: absolute;
@@ -111,6 +116,7 @@ body {
         min-height: 837px;
         background-color: $white;
         padding: 20px 20px 40px 20px;
+        width: 100%;
         .about__text {
             @include inter_text;
             text-align: center;
@@ -120,13 +126,52 @@ body {
         }
         .about-image-wrapper {
             display: flex;
+            width: 100%;
+            flex-wrap: wrap;
             justify-content: space-between;
+            height: 560px;
+            @media screen and (max-width:1410px) {
+                justify-content: space-around;
+            }
+            @media screen and (max-width:1410px) {
+                justify-content: space-around;
+            }
+            .about__img {
+                @media screen and (max-width:1410px) {
+                    &:last-child {
+                        display: none;
+                    }
+                }
+                @media screen and (max-width:1000px) {
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
         }
         .buttons {
             display: flex;
             justify-content: space-between;
-            width: 78px;
+            width: fit-content;
             margin: 35px auto 0 auto;
+            @media screen and (max-width:1410px) {
+                margin-top: 20px;
+            }
+            .btn_hidden {
+                display: none;
+                @media screen and (max-width:1410px) {
+                    &:nth-child(4) {
+                        display: block;
+                    }
+                }
+                @media screen and (max-width:1000px) {
+                    &:nth-child(5) {
+                        display: block;
+                    }
+                }
+            }
+            // .paginator {
+            // }
             .paginator:hover {
                 cursor: pointer;
             }
@@ -205,10 +250,14 @@ body {
         .books-wrapper {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             row-gap: 40px;
             margin-top: 36px;
             min-height: 1150px;
+            @media screen and (max-width:1237px) {
+                justify-content:center
+            }
             .book-wrapper-outer {
                 position: relative;
                 width: 590px;
@@ -260,7 +309,7 @@ body {
                             line-height: 40px;
                             letter-spacing: 2px;
                             margin-top: 5px;
-                            text-transform: capitalize
+                            text-transform: capitalize;
                         }
                     }
                     .buy-book-btn {
@@ -304,7 +353,7 @@ body {
     }
     .coffee-shop {
         min-height: 841px;
-        padding: 20px 20px 40px 20px;
+        padding: 20px 19px 40px 19px;
         background-color: $white;
         .shop-text {
             @include inter_text;
@@ -323,6 +372,10 @@ body {
             margin-top: 40px;
             display: flex;
             justify-content: space-between;
+            // flex-wrap: wrap;
+            @media  (max-width:965px) {
+                flex-direction: column;
+            }
             .coffee-prices,
             .desserts-prices {
                 display: flex;
@@ -365,6 +418,10 @@ body {
             }
             .desserts-prices {
                 width: 464px;
+                @media  (max-width:965px) {
+                    align-self: flex-end;
+                    margin-top: 40px;
+                }
                 .price-h {
                     text-align: right;
                 }
@@ -395,6 +452,10 @@ body {
             display: flex;
             justify-content: space-between;
             margin-top: 41px;
+            @media screen and (max-width:1260px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             .contacts-wrapper {
                 .contacts-group {
                     @include inter_text(20px,700);
@@ -445,6 +506,10 @@ body {
                 width: 696px;
                 height: 414px;
                 margin: 20px 0 0 0;
+                @media screen and (max-width:1260px) {
+                    margin-top: 80px;
+                    align-self: center;
+                }
             }
 
         }
@@ -457,9 +522,14 @@ body {
             display: flex;
             justify-content: space-between;
             margin-top: 62px;
+            @media screen and (max-width:1100px) {
+                flex-direction: column;
+                align-items: center;
+                row-gap: 21px;
+            }
             .find-card-wrapper {
                 width: 600px;
-                height: 386px;
+                // height: 386px;
                 .find-card {
                     @include inter_text(30px);
                     letter-spacing: 0.6px;
@@ -517,11 +587,19 @@ body {
             }
             .get-card-wrapper {
                 text-align: right;
+                max-width: 456px;
+                @media screen and (max-width:1100px) {
+                    text-align: center;
+                    max-width: 600px;
+                }
                 .get-card {
                     @include forum_text(30px,normal);
                     text-align: right;
                     letter-spacing: 0.6px;
                     margin: 0;
+                    @media screen and (max-width:1100px) {
+                        text-align: center;
+                    }
                 }
                 .get-card-text {
                     @include inter_text;
@@ -529,6 +607,19 @@ body {
                     letter-spacing: 0.4px;
                     text-align: right;
                     line-height: 40px; /* 200% */
+                    @media screen and (max-width:1100px) {
+                        text-align: center;
+                        margin-top: 39px;
+                    }
+                }
+                .btn-wrapper {
+                    width: 171px;
+                    margin: 35px 0 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    @media screen and (max-width:1100px) {
+                        margin: 15px auto 0 auto;
+                    }
                 }
                 .get-card-btn {
                     @include inter_text(10px,700);
@@ -539,13 +630,15 @@ body {
                     border-radius: 2px;
                     border: 1px solid #0C0C0E;
                     letter-spacing: 1px;
-                    margin: 15px 0 0 16px;
                     transition: 0.3s ease-in-out;
                     line-height: 10px;
                     &:hover {
                         background-color: $sand;
                         border-color: $sand;
                         cursor: pointer;
+                    }
+                    @media screen and (max-width:1100px) {
+                        margin-top: 20.5px;
                     }
                 }
             }
@@ -554,7 +647,7 @@ body {
 }
 .footer {
     background-color: $dark;
-    padding: 20px 20px 44px 20px;
+    padding: 20px 20px 44px 19px;
     color: $white;
     .footer-text-icons {
         display: flex;
@@ -600,16 +693,15 @@ body {
             padding:0;
             li {
                 list-style-type: none;
-            img {
-                width: 24px;
-                height: 24px;
-                transition: transform 0.3s ease;
-                &:hover {
-                    transform: scale(1.2);
+                img {
+                    width: 24px;
+                    height: 24px;
+                    transition: transform 0.3s ease;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
-            }
-            
         }
     }
     .footer-line {
@@ -623,7 +715,10 @@ body {
         justify-content: space-between;
         .rsschool {
             position: absolute;
-            left: calc(50% - 150px)
+            left: calc(50% - 150px);
+            @media screen and (max-width: 800px) {
+                position: fixed;
+            }
         }
         .rsschool-text {
             @include inter_text;
