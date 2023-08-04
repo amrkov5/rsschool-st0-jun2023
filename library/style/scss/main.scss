@@ -7,7 +7,21 @@
 }
 body {
     background-color: rgb(203, 200, 200);
-
+    position: relative;
+    overflow: auto;
+}
+.bg {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    // display:none;
+    background-color: #313131;
+    opacity: 0.5;
+    z-index: 1;
+}
+.bg-hidden {
+    display: none;
 }
 .container {
     display: grid;
@@ -33,16 +47,79 @@ body {
         flex-basis: 652px;
         align-items: center;
         justify-content: space-between;
-        @media screen and (max-width:1024px) {
-            display: none;
-            
-        }
         .icon-profile {
             cursor: pointer;
+        }
+        @media screen and (max-width:1024px) {
+            flex-basis: 113px;
+        }
+        .brgr-menu {
+            display: none;
+            width: 45px;
+            height: 22px;
+            margin-top: -2px;
+            &:hover {
+                cursor: pointer;
+                .brgr-line:nth-child(2){
+                    &::before {
+                        left: -5px;
+                        opacity: 0.5;
+                    }
+                    &::after {
+                        right: -5px;
+                        opacity: 0.5;
+                    }
+                }
+                .brgr-line:first-child {
+                    transform-origin: top left; 
+                    transform: rotate(2deg);
+                }                
+                .brgr-line:last-child {
+                    transform-origin: top left; 
+                    transform: rotate(-2deg);
+                }
+            }
+
+            @media screen and (max-width:1024px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .brgr-line {
+                width: 45px;
+                height: 2px;
+                background-color: $white;
+                transition: 0.2s ease-in-out;
+                &:nth-child(2) {
+                    position: relative;
+                    background:none;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 50%;
+                        height: 100%;
+                        background-color: $white;
+                        transition: 0.3s ease-in-out;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        width: 50%;
+                        height: 100%;
+                        background-color: $white;
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
         }
     }
     .header-nav {
         flex-basis: 584px;
+        @media screen and (max-width:1024px) {
+            display: none;   
+        }
         .header-nav-list {
             display: flex;
             justify-content: space-between;
@@ -127,23 +204,32 @@ body {
         .about-image-wrapper {
             display: flex;
             width: 100%;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
             justify-content: space-between;
             height: 560px;
             @media screen and (max-width:1410px) {
                 justify-content: space-around;
             }
-            @media screen and (max-width:1410px) {
-                justify-content: space-around;
+            @media screen and (max-width:1000px) {
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 57px 0 57px;
+            }
+            .carret {
+                display: none;
+                margin-top: 45px;
+                @media screen and (max-width:1000px) {
+                    display: block;
+                }
             }
             .about__img {
-                @media screen and (max-width:1410px) {
-                    &:last-child {
+                @media (max-width:1410px) {
+                    &:nth-child(4) {
                         display: none;
                     }
                 }
                 @media screen and (max-width:1000px) {
-                    &:nth-child(2) {
+                    &:nth-child(3) {
                         display: none;
                     }
                 }
@@ -717,7 +803,7 @@ body {
             position: absolute;
             left: calc(50% - 150px);
             @media screen and (max-width: 800px) {
-                position: fixed;
+                left: calc(50% - 177px);
             }
         }
         .rsschool-text {
