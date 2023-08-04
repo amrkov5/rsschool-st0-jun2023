@@ -29,6 +29,61 @@ body {
     max-width: 1440px;
     min-width: 640px;
     margin: 0 auto;
+    position: relative;
+    .menu {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        background-color: $black;
+        width: 332px;
+        height: 570px;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+        z-index: 2;
+        .icons-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+        .brgr-menu-wrapper {
+            width: 118px;
+            height: 370px;
+            margin: 100px auto 0 auto;
+            .brgr-menu-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                align-items: center;
+                padding: 0;
+                list-style-type: none;
+                .nav-list-link {
+                    @include inter_text;
+                    color: $white;
+                    text-decoration: none;
+                    line-height: 50px;
+                    position: relative;
+                    &:hover::after {
+                        width: 100%;
+                        // transition: width 0.3s ease-in-out;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -5px;
+                        width: 0;
+                        height: 2px;
+                        background-color: $white;
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+    .menu-hidden {
+        width: 0;
+    }
 }
 .header {
     display: flex;
@@ -37,6 +92,7 @@ body {
     padding: 0 20px;
     // height: 90px;
     background-color: $dark;
+    overflow: hidden;
     .header__text {
         @include forum_text(30px,50px);
         letter-spacing: 0.6px;
@@ -47,8 +103,10 @@ body {
         flex-basis: 652px;
         align-items: center;
         justify-content: space-between;
+        position: relative;
         .icon-profile {
             cursor: pointer;
+            z-index: 3;
         }
         @media screen and (max-width:1024px) {
             flex-basis: 113px;
@@ -58,6 +116,12 @@ body {
             width: 45px;
             height: 22px;
             margin-top: -2px;
+            z-index: 3;
+            @media screen and (max-width:1024px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
             &:hover {
                 cursor: pointer;
                 .brgr-line:nth-child(2){
@@ -71,19 +135,13 @@ body {
                     }
                 }
                 .brgr-line:first-child {
-                    transform-origin: top left; 
+                    transform-origin: bottom left; 
                     transform: rotate(2deg);
                 }                
                 .brgr-line:last-child {
                     transform-origin: top left; 
                     transform: rotate(-2deg);
                 }
-            }
-
-            @media screen and (max-width:1024px) {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
             }
             .brgr-line {
                 width: 45px;
@@ -112,6 +170,44 @@ body {
                         transition: 0.3s ease-in-out;
                     }
                 }
+            }
+        }
+        .brgr-menu__opened {
+            &:hover {
+                .brgr-line:nth-child(2){
+                    &::before {
+                        left: -100px;
+                        opacity: 00;
+                    }
+                    &::after {
+                        right: -100px;
+                        opacity: 0;
+                    }
+                }
+                .brgr-line:first-child {
+                    transform-origin: 20%; 
+                    transform: rotate(45deg);
+                }                
+                .brgr-line:last-child {
+                    transform-origin: 20%; 
+                    transform: rotate(-45deg);
+                }
+            }
+            .brgr-line:first-child {
+                transform-origin: 20%; 
+                transform: rotate(45deg);
+            }                
+            .brgr-line:last-child {
+                transform-origin: 20%; 
+                transform: rotate(-45deg);
+            }
+            .brgr-line:nth-child(2)::before {
+                left: -100px;
+                opacity: 0;
+            }
+            .brgr-line:nth-child(2)::after {
+                right: -100px;
+                opacity: 0;
             }
         }
     }
