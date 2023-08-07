@@ -104,9 +104,14 @@ body {
         align-items: center;
         justify-content: space-between;
         position: relative;
-        .icon-profile {
+        .profile-wrapper {
             cursor: pointer;
             z-index: 3;
+            transition: margin 0.3s ease-in-out;
+        }
+        .profile-wrapper_menu {
+            margin-top: 2px;
+            margin-left: 13px;
         }
         @media screen and (max-width:1024px) {
             flex-basis: 113px;
@@ -186,20 +191,20 @@ body {
                 }
                 .brgr-line:first-child {
                     transform-origin: 20%; 
-                    transform: rotate(45deg);
+                    transform: translate(10px, 2px) rotate(45deg);
                 }                
                 .brgr-line:last-child {
                     transform-origin: 20%; 
-                    transform: rotate(-45deg);
+                    transform: translate(10px, 2px) rotate(-45deg);
                 }
             }
             .brgr-line:first-child {
                 transform-origin: 20%; 
-                transform: rotate(45deg);
+                transform: translate(10px, 2px) rotate(45deg);
             }                
             .brgr-line:last-child {
                 transform-origin: 20%; 
-                transform: rotate(-45deg);
+                transform: translate(10px, 2px) rotate(-45deg);
             }
             .brgr-line:nth-child(2)::before {
                 left: -100px;
