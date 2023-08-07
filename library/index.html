@@ -9,7 +9,19 @@
     <title>Brooklyn Public Library</title>
 </head>
 <body>
+    <div class="bg bg-hidden"></div>
     <div class="container">
+        <div class="menu menu-hidden">
+            <nav class="brgr-menu-wrapper">
+                <ul class="brgr-menu-list">
+                    <li class="header-list-el"><a href="#about" class="nav-list-link">About</a></li>
+                    <li class="header-list-el"><a href="#favorites" class="nav-list-link">Favorites</a></li>
+                    <li class="header-list-el"><a href="#coffee-shop" class="nav-list-link">Coffee shop</a></li>
+                    <li class="header-list-el"><a href="#contacts" class="nav-list-link">Contacts</a></li>
+                    <li class="header-list-el"><a href="#library-cards" class="nav-list-link">Library Card</a></li>
+                </ul>
+            </nav>
+        </div>
         <header class="header">
         <h1 class="header__text">Brooklyn Public Library</h1>
         <div class="header-wrap">
@@ -22,12 +34,18 @@
                     <li class="header-list-el"><a href="#library-cards" class="nav-list-link">Library Card</a></li>
                 </ul>
             </nav>
-            <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="icon_profile">
-                <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
-                </g>
-            </svg>
-        </div>
+            <div class="profile-wrapper">
+                <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="icon_profile">
+                        <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="brgr-menu">
+                <div class="brgr-line"></div>
+                <div class="brgr-line"></div>
+                <div class="brgr-line"></div>
+            </div>
         </header>
         <main class="main">
             <section class="welcome" id="welcome">
@@ -40,9 +58,19 @@
                 <p class="about__text">The Brooklyn Library is a free workspace, 
                     a large number of books and a cozy coffee shop inside</p>
                 <div class="about-image-wrapper">
+                    <div class="carret">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <img src="./assets/img/about/image_1.png" alt="library_photo" class="about__img">
                     <img src="./assets/img/about/image_2.png" alt="library_photo" class="about__img">
                     <img src="./assets/img/about/image_3.png" alt="library_photo" class="about__img">
+                    <div class="carret">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="paginator-wrapper">
                     <div class="buttons">
@@ -53,6 +81,12 @@
                             <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
                         </svg>
                         <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
+                        </svg>
+                        <svg class="paginator btn_hidden" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
+                        </svg>
+                        <svg class="paginator btn_hidden" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                             <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
                         </svg>
                     </div>
@@ -391,10 +425,13 @@
             </section>
             <section class="coffee-shop" id="coffee-shop">
                 <h2 class="section__h">Coffee shop</h2>
-                <p class="shop-text"><span class="up-text">I</span><span class="low-text">n our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.</span><br>
+                <p class="shop-text"><span class="up-text">I</span><span class="low-text">n our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.</span>
+                    <span class="up-text">Y</span>ou can get a favorite book and read in coffee shop. <span class="low-text">O</span>ur barista to cook you best coffee, and also you can try desserts from bakery.
+                </p>
+                <!-- <p class="shop-text"><span class="up-text">I</span><span class="low-text">n our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.</span><br>
                     <span class="up-text">Y</span>ou can get a favorite book and read in coffee shop. <span class="low-text">O</span>ur barista to cook you best coffee, and also you can try desserts<br>
                     from bakery.
-                </p>
+                </p> -->
                 <div class="menu-wrapper">
                     <div class="coffee-prices">
                         <span class="price-h">Coffee & Tea</span>
@@ -498,11 +535,14 @@
                     </div>
                     <div class="get-card-wrapper">
                         <p class="get-card">Get a reader card</p>
-                        <p class="get-card-text">You will be able to see a reader card after<br>
-                            logging into account or you can register a new<br>
-                            account</p>
-                        <button class="get-card-btn signup">Sign Up</button>
-                        <button class="get-card-btn login">Log in</button>
+                        <p class="get-card-text">You will be able to see a reader card after
+                            logging into account or you can register a new account
+                        </p>
+                        <div class="btn-wrapper">
+                            <button class="get-card-btn signup">Sign Up</button>
+                            <button class="get-card-btn login">Log in</button>
+                        </div>
+                        
                     </div>
                 </div>
             </section>
@@ -529,5 +569,6 @@
         </footer>
     </div>
     <script src="./js/script.js"></script>
+    <script src="./js/burger_menu.js"></script>
 </body>
 </html>
