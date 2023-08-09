@@ -34,7 +34,7 @@ body {
         position: absolute;
         right: 0px;
         top: 0;
-        background-color: $black;
+        background-color: $dark;
         width: 332px;
         height: 570px;
         overflow: hidden;
@@ -113,10 +113,10 @@ body {
             z-index: 3;
             transition: margin 0.1s ease-in-out;
         }
-        .profile-wrapper_menu {
-            margin-top: 2px;
-            margin-left: 13px;
-        }
+        // .profile-wrapper_menu {
+        //     margin-top: 2px;
+        //     margin-left: 13px;
+        // }
         @media screen and (max-width:1024px) {
             flex-basis: 113px;
         }
@@ -374,8 +374,6 @@ body {
                     }
                 }
             }
-            // .paginator {
-            // }
             @media (hover:hover) {
                 .paginator:hover {
                     cursor: pointer;
