@@ -2,7 +2,7 @@ const brgrMenu = document.querySelector('.brgr-menu');
 const menu = document.querySelector('.menu');
 const background = document.querySelector('.bg');
 const menuLinks = document.querySelectorAll('.nav-list-link');
-// const profileIcon = document.querySelector('.profile-wrapper');
+const profileIcon = document.querySelector('.profile-wrapper');
 
 function toggleMenu() {
     brgrMenu.classList.toggle('brgr-menu__opened');
