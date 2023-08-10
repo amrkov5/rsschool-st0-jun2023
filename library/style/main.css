@@ -47,7 +47,7 @@ body {
   right: 0px;
   top: 0;
   background-color: #0C0C0E;
-  width: 332px;
+  width: 335px;
   height: 570px;
   overflow: hidden;
   transition: 0.2s ease-in-out;
@@ -126,14 +126,13 @@ body {
   position: relative;
 }
 .header .header-wrap .profile-wrapper {
-  margin-top: 6px;
+  margin-top: 5px;
   cursor: pointer;
   z-index: 3;
-  transition: margin 0.1s ease-in-out;
 }
 @media screen and (max-width: 1024px) {
   .header .header-wrap {
-    flex-basis: 113px;
+    flex-basis: 115px;
   }
 }
 .header .header-wrap .brgr-menu {
@@ -210,20 +209,20 @@ body {
   }
   .header .header-wrap .brgr-menu__opened:hover .brgr-line:first-child {
     transform-origin: 20%;
-    transform: translate(10px, 2px) rotate(45deg);
+    transform: rotate(45deg);
   }
   .header .header-wrap .brgr-menu__opened:hover .brgr-line:last-child {
     transform-origin: 20%;
-    transform: translate(10px, 2px) rotate(-45deg);
+    transform: rotate(-45deg);
   }
 }
 .header .header-wrap .brgr-menu__opened .brgr-line:first-child {
   transform-origin: 20%;
-  transform: translate(10px, 2px) rotate(45deg);
+  transform: rotate(45deg);
 }
 .header .header-wrap .brgr-menu__opened .brgr-line:last-child {
   transform-origin: 20%;
-  transform: translate(10px, 2px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .header .header-wrap .brgr-menu__opened .brgr-line:nth-child(2)::before {
   left: -100px;
