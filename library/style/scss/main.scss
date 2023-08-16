@@ -336,6 +336,9 @@ body {
                 @media screen and (max-width:982px) {
                     display: block;
                 }
+                path {
+                    pointer-events: none;
+                }
             }
             .image-wrapper-outer {
                 position: relative;
