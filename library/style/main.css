@@ -338,16 +338,11 @@ body {
 }
 .main .about .about-image-wrapper {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  max-width: 1400px;
   height: 560px;
 }
-@media screen and (max-width: 1410px) {
-  .main .about .about-image-wrapper {
-    justify-content: space-around;
-  }
-}
-@media screen and (max-width: 1000px) {
+@media (max-width: 982px) {
   .main .about .about-image-wrapper {
     max-width: 614px;
     margin: 0 auto;
@@ -360,20 +355,39 @@ body {
   margin-top: 45px;
   cursor: pointer;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 982px) {
   .main .about .about-image-wrapper .carret {
     display: block;
   }
 }
+.main .about .about-image-wrapper .image-wrapper-outer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
 @media (max-width: 1410px) {
-  .main .about .about-image-wrapper .about__img:nth-child(4) {
-    display: none;
+  .main .about .about-image-wrapper .image-wrapper-outer {
+    margin: 0 auto;
+    flex-basis: 925px;
   }
 }
-@media screen and (max-width: 1000px) {
-  .main .about .about-image-wrapper .about__img:nth-child(3) {
-    display: none;
+@media (max-width: 982px) {
+  .main .about .about-image-wrapper .image-wrapper-outer {
+    max-width: 450px;
   }
+}
+.main .about .about-image-wrapper .image-wrapper-outer .image-wrapper-inner {
+  position: absolute;
+  display: flex;
+  width: 2350px;
+  justify-content: space-between;
+  flex: none;
+  transition: left 0.5s ease-in-out;
+}
+.main .about .about-image-wrapper .image-wrapper-outer .image-wrapper-inner .about__img {
+  width: 450px;
+  height: 100%;
 }
 .main .about .buttons {
   display: flex;
@@ -381,10 +395,11 @@ body {
   width: fit-content;
   margin: 35px auto 0 auto;
 }
-@media screen and (max-width: 1410px) {
-  .main .about .buttons {
-    margin-top: 20px;
-  }
+.main .about .buttons .paginator rect {
+  pointer-events: none;
+}
+.main .about .buttons .active rect {
+  fill: #BB945F;
 }
 .main .about .buttons .btn_hidden {
   display: none;
@@ -394,7 +409,7 @@ body {
     display: block;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 982px) {
   .main .about .buttons .btn_hidden:nth-child(5) {
     display: block;
   }
@@ -402,6 +417,11 @@ body {
 @media (hover: hover) {
   .main .about .buttons .paginator:hover {
     cursor: pointer;
+  }
+}
+@media (hover: hover) {
+  .main .about .buttons .active:hover {
+    cursor: default;
   }
 }
 .main .favorites {
