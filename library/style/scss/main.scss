@@ -423,6 +423,9 @@ body {
     .favorites {
         padding: 15px 20px 40px 20px;
         background-color: $white;
+        @media (max-width:768px) {
+            position:relative;
+        }
         .favorites__text {
             @include inter_text(20px,700);
             margin: 61px 0 0 0;
@@ -433,6 +436,11 @@ body {
             justify-content:space-between;
             margin-top: 36px;
             max-width:712px;
+            @media (max-width:768px) {
+                position: sticky;
+                top:40px;
+                z-index: 1;
+            }
             // flex-basis: 750px;
             .selector {
                 display:none;
@@ -466,7 +474,7 @@ body {
                     &::after {
                         content: "";
                         position:absolute;
-                        top:16px;
+                        top:15px;
                         left:5px;
                         display: inline-block;
                         width:7px;
@@ -490,6 +498,9 @@ body {
                 }      
             }
         }
+        .fading-card {
+            opacity: 0;
+        }
         .books-wrapper {
             display: flex;
             justify-content: space-between;
@@ -498,6 +509,7 @@ body {
             row-gap: 40px;
             margin-top: 36px;
             min-height: 1150px;
+            transition: opacity 0.3s ease-in-out;
             @media screen and (max-width:1237px) {
                 justify-content:center
             }

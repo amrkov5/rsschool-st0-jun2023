@@ -3,7 +3,6 @@ const sliderArrows = document.querySelectorAll('.carret');
 const slider = document.querySelector('.image-wrapper-inner');
 let offset = 0;
 let btnPosition = 0;
-console.log(sliderBtn[btnPosition])
 
 function offsetWithButtons(event) {
     const btnArr = Array.from(sliderBtn);
