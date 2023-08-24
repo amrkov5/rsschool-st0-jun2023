@@ -513,7 +513,7 @@ body {
   transform: scale(1);
 }
 .main .favorites .fading-animation {
-  animation: fading-card 0.2s ease-in-out 1;
+  animation: fading-card 1s ease-in-out 1;
 }
 @keyframes fading-card {
   from {
@@ -524,7 +524,7 @@ body {
   }
 }
 .main .favorites .showing-animation {
-  animation: showing-card 0.2s ease-in-out 1;
+  animation: showing-card 1s ease-in-out 1;
 }
 @keyframes showing-card {
   from {

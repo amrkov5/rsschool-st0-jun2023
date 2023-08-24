@@ -20,7 +20,7 @@ function showCard() {
 }
 
 function switchSeasons(event) {
-    console.log(event)
+    // console.log(event)
     newTarget = Array.from(selectors).indexOf(event.target);
     if(newTarget != activeSeason) {
         if(isAnimating) {
@@ -35,7 +35,7 @@ function switchSeasons(event) {
             } else if (bookCards[activeSeason].classList.contains('showing-animation')){
                 bookCards[activeSeason].classList.remove('showing-animation');
                 bookCards[activeSeason].addEventListener('animationcancel', function() {
-                    isAnimating = false
+
                     switchSeasons(event)
                 })
             }
