@@ -22,6 +22,28 @@
                 </ul>
             </nav>
         </div>
+        <div class="profile-menu profile-menu-hidden">
+            <p class="menu-head">Profile</p>
+            <hr>
+            <div class="menu-text-wrapper">
+                <p class="menu-text">Log In</p>
+                <p class="menu-text">Register</p>
+            </div>
+        </div>
+        <div class="modal-register">
+            <h3 class="register-head">register</h3>
+            <form class="register-form" action="">
+                <label for="firstName"></label>
+                <input type="text" name="firstName" id="firstName">
+                <label for="lastName"></label>
+                <input type="text" name="lastName" id="lastName">
+                <label for="e-mail"></label>
+                <input type="text" name="e-mail" id="e-mail">
+                <label for="password"></label>
+                <input type="text" name="password" id="password">
+            </form>
+            </div>
+        </div>
         <header class="header">
         <h1 class="header__text">Brooklyn Public Library</h1>
         <div class="header-wrap">
@@ -36,7 +58,7 @@
             </nav>
             <div class="profile-wrapper">
                 <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="icon_profile">
+                    <g id="icon_profile_g">
                         <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
                     </g>
                 </svg>
@@ -188,7 +210,7 @@
                                     have evolved and thrived as the<br>
                                     modern world has changed around them.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="own-book-btn" disabled>Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/winter/last_queen.png" alt="the_last_queen_pic">
                         </div>
@@ -262,7 +284,7 @@
                                     fans of Isabel Allende and Julia<br>
                                     Alvarez.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="own-book-btn" disabled>Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/spring/dominicana.png" alt="dominicana_pic">
                         </div>
@@ -342,7 +364,7 @@
                                     and revolutionaries, lepers and<br>
                                     healers.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="own-book-btn" disabled>Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/summer/shark_dialogues.png" alt="shark_dialogues_pic">
                         </div>
@@ -422,7 +444,7 @@
                                     giving birth to gods from their<br>
                                     wounds.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="own-book-btn" disabled>Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/autumn/slug.png" alt="slug_pic">
                         </div>
@@ -575,9 +597,10 @@
         </footer>
     </div>
     <script src="./js/script.js"></script>
-    <script src="./js/burger_menu.js"></script>
+    <script src="./js/burger_menu.js" type="module"></script>
     <script src="./js/about_slider.js"></script>
     <script src="./js/favorites_selector_v3.js"></script>
+    <script src="./js/profile_menu.js" type="module"></script>
     <!-- <script src="./js/favorites_selector_v2.js"></script> -->
 </body>
 </html>

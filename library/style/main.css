@@ -100,6 +100,55 @@ body {
 .container .menu-hidden {
   width: 0;
 }
+.container .profile-menu {
+  position: absolute;
+  top: 61px;
+  right: 20px;
+  height: 115px;
+  overflow-y: hidden;
+  width: 80px;
+  background-color: #FFFFFF;
+  z-index: 1;
+  padding: 0px 10px 0px;
+  transition: height 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .container .profile-menu {
+    right: 107px;
+  }
+}
+.container .profile-menu .menu-head {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 5px 0 4px 0;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+.container .profile-menu hr {
+  width: 39px;
+  margin: 0 auto;
+  border: 0.3px solid #BB945F;
+}
+.container .profile-menu .menu-text {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+.container .profile-menu .menu-text:first-child {
+  margin: 15px 0 10px 0;
+}
+.container .profile-menu-hidden {
+  height: 0px;
+  padding: 0;
+}
 
 .header {
   display: flex;
@@ -129,6 +178,9 @@ body {
   margin-top: 5px;
   cursor: pointer;
   z-index: 3;
+}
+.header .header-wrap .profile-wrapper path {
+  pointer-events: none;
 }
 @media screen and (max-width: 1024px) {
   .header .header-wrap {

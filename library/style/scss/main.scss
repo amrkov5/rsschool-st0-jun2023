@@ -87,6 +87,48 @@ body {
     .menu-hidden {
         width: 0;
     }
+    .profile-menu {
+        position: absolute;
+        top: 61px;
+        right: 20px;
+        height: 115px;
+        overflow-y: hidden;
+        width: 80px;
+        background-color: $white;
+        z-index: 1;
+        padding: 0px 10px 0px;
+        transition: height 0.3s ease-in-out;
+        @media (max-width:768px) {
+            right: 107px;
+        }
+        .menu-head {
+            @include inter_text(15px, 700);
+            margin: 5px 0 4px 0;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        hr {
+            width: 39px;
+            // color: $sand;
+            margin: 0 auto;
+            border:0.3px solid $sand;
+        }
+        .menu-text {
+            @include inter_text(15px);
+            text-align: center;
+            line-height: 20px;
+            margin: 0;
+            cursor: pointer;
+            &:first-child {
+                margin: 15px 0 10px 0;
+            }
+        }
+    }
+    .profile-menu-hidden {
+        height: 0px;
+        padding: 0;
+    }
 }
 .header {
     display: flex;
@@ -111,12 +153,10 @@ body {
             margin-top: 5px;
             cursor: pointer;
             z-index: 3;
-            // transition: margin 0.1s ease-in-out;
+            path {
+                pointer-events: none;
+            }
         }
-        // .profile-wrapper_menu {
-        //     margin-top: 2px;
-        //     margin-left: 13px;
-        // }
         @media screen and (max-width:1024px) {
             flex-basis: 115px;
         }
