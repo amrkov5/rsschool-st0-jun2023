@@ -112,7 +112,7 @@ body {
   padding: 0px 10px 0px;
   transition: height 0.3s ease-in-out;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container .profile-menu {
     right: 107px;
   }
@@ -147,7 +147,6 @@ body {
 }
 .container .profile-menu-hidden {
   height: 0px;
-  padding: 0;
 }
 .container .modal-register-hidden {
   display: none;
@@ -205,6 +204,20 @@ body {
   font-weight: 400;
   line-height: 20px; /* 133.333% */
   letter-spacing: 0.3px;
+}
+.container .modal-register .register-form .register-input-error {
+  position: relative;
+}
+.container .modal-register .register-form .register-input-error::after {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  content: "*Please enter the valid value.";
+  position: absolute;
+  top: 46px;
+  left: 0;
+  color: red;
 }
 .container .modal-register .register-form .register-input {
   font-family: "Inter", sans-serif;
@@ -296,9 +309,41 @@ body {
   position: relative;
 }
 .header .header-wrap .profile-wrapper {
+  position: relative;
   margin-top: 5px;
   cursor: pointer;
   z-index: 3;
+}
+.header .header-wrap .profile-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.header .header-wrap .profile-wrapper .profile_initials {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: -5px;
+  background-color: #FFFFFF;
+  color: #BB945F;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+}
+.header .header-wrap .profile-wrapper .icon_profile_hidden {
+  display: none;
+}
+.header .header-wrap .profile-wrapper .icon_profile {
+  pointer-events: none;
+}
+.header .header-wrap .profile-wrapper .icon_profile path {
+  pointer-events: none;
 }
 .header .header-wrap .profile-wrapper path {
   pointer-events: none;

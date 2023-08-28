@@ -1,5 +1,5 @@
 import { toggleMenu as toggleBurgerMenu } from "./burger_menu.js";
-const iconProfile = document.querySelector('.icon-profile');
+const iconProfile = document.querySelector('.profile-wrapper');
 const profileMenu = document.querySelector('.profile-menu')
 const background = document.querySelector('.bg');
 const menu = document.querySelector('.menu');

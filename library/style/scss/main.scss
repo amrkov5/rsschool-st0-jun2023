@@ -98,7 +98,7 @@ body {
         z-index: 1;
         padding: 0px 10px 0px;
         transition: height 0.3s ease-in-out;
-        @media (max-width:768px) {
+        @media (max-width:1024px) {
             right: 107px;
         }
         .menu-head {
@@ -127,7 +127,7 @@ body {
     }
     .profile-menu-hidden {
         height: 0px;
-        padding: 0;
+        // padding: 0;
     }
     .modal-register-hidden {
         display: none;
@@ -176,6 +176,17 @@ body {
                 @include inter_text(15px);
                 line-height: 20px; /* 133.333% */
                 letter-spacing: 0.3px;
+            }
+            .register-input-error {
+                position: relative;
+                &::after {
+                    @include inter_text(8px,400);
+                    content: "*Please enter the valid value.";
+                    position: absolute;
+                    top: 46px;
+                    left: 0;
+                    color:red;
+                }
             }
             .register-input {
                 @include inter_text(15px);
@@ -253,9 +264,38 @@ body {
         justify-content: space-between;
         position: relative;
         .profile-wrapper {
+            position: relative;
             margin-top: 5px;
             cursor: pointer;
             z-index: 3;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .profile_initials {
+                @include inter_text(15px,400);
+                margin-top: -5px;
+                background-color: $white;
+                color: $sand;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                text-align: center;
+            }
+            .icon_profile_hidden {
+                display: none;
+            }
+            .icon_profile {
+                pointer-events: none;
+                path {
+                    pointer-events: none;
+                }
+            }
             path {
                 pointer-events: none;
             }
