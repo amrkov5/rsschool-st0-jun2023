@@ -30,9 +30,9 @@
                 <p class="menu-text">Register</p>
             </div>
         </div>
-        <div class="modal-register modal-register-hidden">
-            <h3 class="register-head">register</h3>
-            <div class="register-close-btn">
+        <div class="modal-register modal-hidden">
+            <h3 class="modal-head">register</h3>
+            <div class="modal-close-btn">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="close_btn">
                     <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
@@ -41,19 +41,41 @@
                 </svg>
             </div>
             <form class="register-form" action="">
-                <label class="register-input-label" for="firstName">First name</label>
-                <input class="register-input" type="text" name="firstName" id="firstName">
-                <label class="register-input-label" for="lastName">Last name</label>
-                <input class="register-input" type="text" name="lastName" id="lastName">
-                <label class="register-input-label" for="e-mail">E-mail</label>
-                <input class="register-input" type="text" name="e-mail" id="e-mail">
-                <label class="register-input-label" for="password">Password</label>
-                <input class="register-input" type="text" name="password" id="password">
+                <label class="modal-input-label" for="firstName">First name</label>
+                <input class="modal-input" type="text" name="firstName" id="firstName">
+                <label class="modal-input-label" for="lastName">Last name</label>
+                <input class="modal-input" type="text" name="lastName" id="lastName">
+                <label class="modal-input-label" for="e-mail">E-mail</label>
+                <input class="modal-input" type="text" name="e-mail" id="e-mail">
+                <label class="modal-input-label" for="password">Password</label>
+                <input class="modal-input" type="text" name="password" id="password">
             </form>
             <button class="register-btn">Sign Up</button>
             <div class="register-login">
                 <span class="question-text">Already have an account?</span>
-                <span class="login-link" href="">Login</span>
+                <span class="login-link">Login</span>
+            </div>
+        </div>
+        <div class="modal-login modal-hidden">
+            <h3 class="modal-head">login</h3>
+            <div class="modal-close-btn">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="close_btn">
+                    <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                    <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                    </g>
+                </svg>
+            </div>
+            <form class="login-form" action="">
+                <label class="modal-input-label" for="email-login">E-mail or reader's card</label>
+                <input class="modal-input" type="text" name="email" id="email-login">
+                <label class="modal-input-label" for="password-login">Password</label>
+                <input class="modal-input" type="password" name="password" id="password-login">
+            </form>
+            <button class="login-btn">Log In</button>
+            <div class="register-login">
+                <span class="question-text">Don’t have an account?</span>
+                <span class="register-link">Register</span>
             </div>
         </div>
         <header class="header">
@@ -69,7 +91,7 @@
                 </ul>
             </nav>
             <div class="profile-wrapper">
-                <div class="profile_initials icon_profile_hidden" title="хуй"></div>
+                <div class="profile_initials icon_profile_hidden"></div>
                 <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="icon_profile_g">
                         <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
@@ -223,7 +245,7 @@
                                     have evolved and thrived as the<br>
                                     modern world has changed around them.
                                 </p>
-                                <button class="own-book-btn" disabled>Buy</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/winter/last_queen.png" alt="the_last_queen_pic">
                         </div>
@@ -297,7 +319,7 @@
                                     fans of Isabel Allende and Julia<br>
                                     Alvarez.
                                 </p>
-                                <button class="own-book-btn" disabled>Buy</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/spring/dominicana.png" alt="dominicana_pic">
                         </div>
@@ -377,7 +399,7 @@
                                     and revolutionaries, lepers and<br>
                                     healers.
                                 </p>
-                                <button class="own-book-btn" disabled>Buy</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/summer/shark_dialogues.png" alt="shark_dialogues_pic">
                         </div>
@@ -457,7 +479,7 @@
                                     giving birth to gods from their<br>
                                     wounds.
                                 </p>
-                                <button class="own-book-btn" disabled>Buy</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/autumn/slug.png" alt="slug_pic">
                         </div>
@@ -633,6 +655,7 @@
     <script src="./js/favorites_selector_v3.js"></script>
     <script src="./js/profile_menu.js" type="module"></script>
     <script type="module" src="./js/modal_register.js"></script>
+    <script type="module" src="./js/modal_login.js"></script>
     <script src="./js/check_user.js"></script>
 </body>
 </html>
