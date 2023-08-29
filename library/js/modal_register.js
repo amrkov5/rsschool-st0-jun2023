@@ -27,6 +27,7 @@ function toggleRegister() {
 }
 
 function validateInputs() {
+    isValidated = true;
     const firstLastNamePattern = /^[a-zA-Z\-\s]{2,30}$/;
     const emailPattern = /^[\w\-_.]+@[a-zA-Z]+\.[a-zA-Z]{2,4}(?:\.[a-zA-Z]{2,4})?$/;
     inputLabels.forEach(el => {
@@ -65,6 +66,9 @@ function registerUser() {
         email: emailInput.value,
         password: pwdInput.value,
         cardId: generateCardID(),
+        visitAmount: 1,
+        bonuses: 0,
+        booksBought: [],
     }
     if (!localStorage.getItem('usersDB')) {
         usersDb.push(userObj);

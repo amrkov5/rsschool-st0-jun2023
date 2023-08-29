@@ -69,7 +69,7 @@
                 </ul>
             </nav>
             <div class="profile-wrapper">
-                <div class="profile_initials icon_profile_hidden"></div>
+                <div class="profile_initials icon_profile_hidden" title="хуй"></div>
                 <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="icon_profile_g">
                         <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
@@ -568,10 +568,27 @@
                         <div class="find-card-form-outer">
                             <div class="find-card-form-inner">
                                 <p class="form-text">Brooklyn Public Library</p>
-                                <input class="form-input name" type="text" pattern="[a-zA-Z0-9-]*" placeholder="Reader's name">
-                                <input class="form-input card-number" type="text" pattern="[0-9]" placeholder="Card number">
+                                <input class="form-input name" type="text" placeholder="Reader's name">
+                                <input class="form-input card-number" type="text" placeholder="Card number">
                             </div>
                             <button class="chk_card">Check the card</button>
+                            <div class="user-info user-info-hidden">
+                                <div>
+                                    <span>Visits</span>
+                                    <img src="./assets/icons/Union.svg" alt="user_icon" class="info-cards">
+                                    <span class="user-info-counter">23</span>
+                                </div>
+                                <div>
+                                    <span>Bonuses</span>
+                                    <img src="./assets/icons/Star.svg" alt="star_icon" class="info-cards">
+                                    <span class="user-info-counter">123</span>
+                                </div>
+                                <div>
+                                    <span>Books</span>
+                                    <img src="./assets/icons/book.svg" alt="book_icon" class="info-cards">
+                                    <span class="user-info-counter">23</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="get-card-wrapper">
@@ -605,7 +622,7 @@
             <div class="footer-rsschool-text">
                 <span class="rsschool-text">2023</span>
                 <a class="rsschool" href="https://rs.school/js-stage0/" target="_blank"><span class="rsschool-text">The Rolling Scopes School</span></a>
-                <a class="name" href="https://github.com/amrkov5" target="_blank"><span class="rsschool-text">@amrkov5</span></a>
+                <a class="creators-name" href="https://github.com/amrkov5" target="_blank"><span class="rsschool-text">@amrkov5</span></a>
             </div>
         </footer>
     </div>
@@ -616,6 +633,6 @@
     <script src="./js/favorites_selector_v3.js"></script>
     <script src="./js/profile_menu.js" type="module"></script>
     <script type="module" src="./js/modal_register.js"></script>
-    <!-- <script src="./js/favorites_selector_v2.js"></script> -->
+    <script src="./js/check_user.js"></script>
 </body>
 </html>

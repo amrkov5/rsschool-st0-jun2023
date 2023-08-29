@@ -310,7 +310,7 @@ body {
 }
 .header .header-wrap .profile-wrapper {
   position: relative;
-  margin-top: 5px;
+  line-height: 1;
   cursor: pointer;
   z-index: 3;
 }
@@ -327,7 +327,6 @@ body {
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  margin-top: -5px;
   background-color: #FFFFFF;
   color: #BB945F;
   border-radius: 50%;
@@ -1128,8 +1127,15 @@ body {
   text-indent: 18px;
   border: none;
 }
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .name-typing {
+  color: #BB945F;
+}
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .card-number {
   margin-top: 25px;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .card-number-typing {
+  text-transform: uppercase;
+  color: #BB945F;
 }
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .chk_card {
   font-family: "Inter", sans-serif;
@@ -1153,6 +1159,36 @@ body {
     border-color: #BB945F;
     cursor: pointer;
   }
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .user-info {
+  display: grid;
+  grid-template-columns: 27px 42px 30px;
+  margin: 20px auto;
+  width: 169px;
+  height: 63px;
+  justify-content: space-between;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .user-info img {
+  display: block;
+  height: 21px;
+  width: 21px;
+  margin: 0 auto;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .user-info div {
+  width: 100%;
+  text-align: center;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .user-info span {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+.main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .user-info-hidden {
+  display: none;
 }
 .main .library-cards .cards-wrapper .get-card-wrapper {
   text-align: right;

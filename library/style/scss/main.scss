@@ -265,7 +265,8 @@ body {
         position: relative;
         .profile-wrapper {
             position: relative;
-            margin-top: 5px;
+            // margin-top: 5px;
+            line-height: 1;
             cursor: pointer;
             z-index: 3;
             &::after {
@@ -278,7 +279,7 @@ body {
             }
             .profile_initials {
                 @include inter_text(15px,400);
-                margin-top: -5px;
+                // margin-top: -5px;
                 background-color: $white;
                 color: $sand;
                 border-radius: 50%;
@@ -956,8 +957,6 @@ body {
                 }
             }
             .map-wrapper {
-                // width: 696px;
-                // height: 414px;
                 margin: 20px 0 0 0;
                 @media screen and (max-width:1260px) {
                     margin-top: 80px;
@@ -985,9 +984,7 @@ body {
                 row-gap: 21px;
             }
             .find-card-wrapper {
-                // flex-basis: 600px;
                 max-width: 600px;
-                // height: 386px;
                 .find-card {
                     @include inter_text(30px);
                     letter-spacing: 0.6px;
@@ -1017,10 +1014,17 @@ body {
                             letter-spacing: 0.6px;
                             color: #8E8E8E;
                             text-indent: 18px;
-                            border: none;
+                            border: none;                            
+                        }
+                        .name-typing {
+                            color:$sand;
                         }
                         .card-number {
                             margin-top: 25px;
+                        }
+                        .card-number-typing {
+                            text-transform: uppercase;
+                            color: $sand;
                         }
                     }
                     .chk_card {
@@ -1042,6 +1046,33 @@ body {
                                 cursor: pointer;
                             }
                         }
+                    }
+                    .user-info {
+                        display: grid;
+                        grid-template-columns: 27px 42px 30px;
+                        margin: 20px auto;
+                        width: 169px;
+                        height: 63px;
+                        justify-content: space-between;
+                        img {
+                            display: block;
+                            height: 21px;
+                            width: 21px;
+                            margin: 0 auto
+                        }
+                        div {
+                            width: 100%;
+                            text-align: center
+                        }
+                        span {
+                            @include inter_text(10px,400);
+                            line-height: 20px;
+                            letter-spacing: 0.2px;
+                            text-align: center;
+                        }
+                    }
+                    .user-info-hidden {
+                        display: none;
                     }
                 }
             }
