@@ -78,6 +78,50 @@
                 <span class="register-link">Register</span>
             </div>
         </div>
+        <div class="modal-profile modal-hidden">
+            <div class="profile-side">
+                <div class="profile-initials">jd</div>
+                <div class="profile-username">John Doe</div>
+            </div>
+            <div class="profile-main">
+                <p class="profile-head">my profile</p>
+                <div class="modal-close-btn">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="close_btn">
+                            <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                            <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-user-info">
+                    <div>
+                        <span>Visits</span>
+                        <img src="./assets/icons/Union.svg" alt="user_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                    <div>
+                        <span>Bonuses</span>
+                        <img src="./assets/icons/Star.svg" alt="star_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                    <div>
+                        <span>Books</span>
+                        <img src="./assets/icons/book.svg" alt="book_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                </div>
+                <p class="profile-rented-books">Rented books</p>
+                <ul class="profile-books-list">
+                    <li class="profile-list-el">The Last Queen, Clive Irving</li>
+                    <li class="profile-list-el">Dominicana, Angie Cruz</li>
+                </ul>
+                <div class="profile-card-wrapper">
+                    <span class="profile-card-text">Card number</span>
+                    <span class="profile-card-number">F00234030</span>
+                    <img src="./assets/icons/icon copy.svg" alt="clipboard-icon">
+                </div>
+            </div>
+        </div>
         <header class="header">
         <h1 class="header__text">Brooklyn Public Library</h1>
         <div class="header-wrap">
@@ -657,5 +701,6 @@
     <script type="module" src="./js/modal_register.js"></script>
     <script type="module" src="./js/modal_login.js"></script>
     <script src="./js/check_user.js"></script>
+    <script type="module" src="./js/modal_profile.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { loginPreparation as logIn } from './LogIn_logOut-preparations.js'
+import { loginPreparation as logIn, logOutPreparation as logOut } from './LogIn_logOut-preparations.js'
 import { toggleLogIn } from './modal_login.js'
 const profileRegister = document.querySelector('.menu-text:nth-child(2)');
 const btnRegister = document.querySelector('.signup');
@@ -60,7 +60,7 @@ function validateInputs() {
 }
 
 function generateCardID() {
-    return Math.floor(Math.random() * 0xFFFFFFFFF).toString(16);    
+    return Math.floor(Math.random() * 0xFFFFFFFFF).toString(16).toUpperCase();    
 }
 
 function registerUser() {
@@ -74,6 +74,7 @@ function registerUser() {
         visitAmount: 0,
         bonuses: 0,
         booksBought: [],
+        isCardActive: false,
     }
     if (!localStorage.getItem('usersDB')) {
         usersDb.push(userObj);
@@ -83,15 +84,21 @@ function registerUser() {
         usersDb.push(userObj);
         localStorage.setItem('usersDB', JSON.stringify(usersDb));
     }
-    if (localStorage.getItem('currentUser')) {
-        localStorage.removeItem('currentUser');
+    if (sessionStorage.getItem('currentUser')) {
+        sessionStorage.removeItem('currentUser');
     }
-    localStorage.setItem('currentUser', JSON.stringify(userObj));
+    sessionStorage.setItem('currentUser', JSON.stringify(usersDb.indexOf(userObj)));
     toggleRegister()
     logIn(usersDb.indexOf(userObj))
 }
 
-profileRegister.addEventListener('click', toggleRegister);
+profileRegister.addEventListener('click', function() {
+    if (profileRegister.textContent == 'Register') {
+        toggleRegister()
+    } else {
+        logOut()
+    }
+});
 btnRegister.addEventListener('click', toggleRegister);
 background.addEventListener('click', function() {
     if (!background.classList.contains('bg-hidden')) {

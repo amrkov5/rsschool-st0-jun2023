@@ -6,8 +6,9 @@ function checkUsersInfo() {
     const usersDb = JSON.parse(localStorage.getItem('usersDB'));
     const userInfo = document.querySelector('.user-info');
     const userCounters = document.querySelectorAll('.user-info-counter');
+    console.log(cardInput.value)
     foundUser = usersDb.find(element => { 
-        if (cardInput.value.toLowerCase() == element.cardId && nameInput.value.toLowerCase() == `${element.firstName} ${element.lastName}`.toLocaleLowerCase()) {
+        if (cardInput.value == element.cardId && nameInput.value.toLowerCase() == `${element.firstName} ${element.lastName}`.toLocaleLowerCase()) {
             return true
         }
     });
@@ -30,11 +31,10 @@ chkBtn.addEventListener('click', checkUsersInfo)
 nameInput.addEventListener('input', function() {
     if (nameInput.value.length > 0) {
         nameInput.classList.add('name-typing');
-    }
+    } else nameInput.classList.remove('name-typing');
 })
 cardInput.addEventListener('input', function() {
     if (cardInput.value.length > 0) {
         cardInput.classList.add('card-number-typing');
-
-    }
+    } else cardInput.classList.add('card-number-typing');
 })

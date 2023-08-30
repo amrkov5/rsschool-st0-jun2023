@@ -1,5 +1,6 @@
-import { loginPreparation as logIn } from './LogIn_logOut-preparations.js'
+import { loginPreparation as logIn, logOutPreparation as logOut } from './LogIn_logOut-preparations.js'
 import { toggleRegister } from './modal_register.js'
+import { toggleProfile } from './modal_profile.js';
 const profileLogIn = document.querySelector('.menu-text:nth-child(1)');
 const btnLogIn = document.querySelector('.login');
 const background = document.querySelector('.bg');
@@ -50,7 +51,7 @@ function logInUser() {
     const usersDb = JSON.parse(localStorage.getItem('usersDB'));
     const isExist =usersDb.find(el => {
         if (emailInput.value.length == 9) {
-            if (emailInput.value == el.cardID && pwdInput.value == el.password) {
+            if (emailInput.value.toUpperCase() == el.cardId && pwdInput.value == el.password) {
                 return true;
             }
         } else {
@@ -59,10 +60,10 @@ function logInUser() {
             }
         }
     })
-    if (localStorage.getItem('currentUser')) {
-        localStorage.removeItem('currentUser');
+    if (sessionStorage.getItem('currentUser')) {
+        sessionStorage.removeItem('currentUser');
     }
-    localStorage.setItem('currentUser', JSON.stringify(isExist));
+    sessionStorage.setItem('currentUser', JSON.stringify(usersDb.indexOf(isExist)));
     if (isExist) {
         toggleLogIn();
         logIn(usersDb.indexOf(isExist));
@@ -78,7 +79,13 @@ buyBtn.forEach(el => {
 })
 
 logInBtn.addEventListener('click', validateInputsLogIn)
-profileLogIn.addEventListener('click', toggleLogIn);
+profileLogIn.addEventListener('click', function() {
+    if(profileLogIn.textContent == 'Log In') {
+        toggleLogIn()
+    } else {
+        toggleProfile()
+    }
+});
 btnLogIn.addEventListener('click', toggleLogIn);
 background.addEventListener('click', function() {
     if (!background.classList.contains('bg-hidden')) {

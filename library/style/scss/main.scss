@@ -95,7 +95,7 @@ body {
         width: 80px;
         background-color: $white;
         z-index: 1;
-        padding: 0px 10px 0px;
+        // padding: 0px 10px 0px;
         transition: height 0.3s ease-in-out;
         @media (max-width:1024px) {
             right: 107px;
@@ -106,6 +106,9 @@ body {
             text-align: center;
             line-height: 20px;
             cursor: pointer;
+        }
+        .menu-head-cardid {
+            font-size: 10px;
         }
         hr {
             width: 39px;
@@ -127,9 +130,6 @@ body {
     .profile-menu-hidden {
         height: 0px;
         // padding: 0;
-    }
-    .modal-hidden {
-        display: none;
     }
     .modal-head {
         @include forum_text(20px,20px);
@@ -300,6 +300,119 @@ body {
             }
         }
     }
+    .modal-profile {
+        position: fixed;
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        top: calc(100vh - 50% - 200px);
+        left: calc(100vw - 50% - 300px);
+        height: 400px;
+        width: 600px;
+        background-color: $white;
+        z-index: 1;
+        .profile-side {
+            background-color: $dark;
+            .profile-initials {
+                @include inter_text(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 80px;
+                width: 80px;
+                margin: 139px auto 15px auto;
+                background-color: $white;
+                line-height: 20px; /* 100% */
+                text-transform: uppercase;
+                color: $sand;
+            }
+            .profile-username {
+                @include inter_text(20px);
+                max-width: 120px;
+                padding: 5px 15px;
+                color: #000;
+                line-height: 20px;
+                text-transform: capitalize;
+                text-align: center;
+                background-color: $white;
+                margin: 0 auto;
+                min-height: 30px;
+            }
+        }
+        .profile-main {
+            padding: 25px 25px 39px 20px;
+            .profile-head {
+                @extend %forum_h2;
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                margin: 5px 0 0 0;
+            }
+            .modal-close-btn {
+                top: 23px;
+                right: 23px;
+            }
+            .profile-user-info {
+                display: grid;
+                grid-template-columns: 53px 84px 60px;
+                margin: 30px 0 0 0;
+                width: 237px;
+                height: 81px;
+                justify-content: space-between;
+                img {
+                    display: block;
+                    height: 21px;
+                    width: 21px;
+                    margin: 0 auto
+                }
+                div {
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between
+                }
+                span {
+                    @include inter_text(20px,400);
+                    line-height: 20px;
+                    letter-spacing: 0.4px;
+                    text-align: center;
+                }
+                .user-info-counter {
+                    @include inter_text(10px,400);
+                }
+            }
+            .profile-rented-books {
+                @include inter_text(25px);
+                margin: 16px 0 0 0;
+            }
+            .profile-books-list {
+                @include inter_text;
+                width: 370px;
+                height: 55px;
+                margin-top: 23px;
+                padding: 0 0 0 30px;
+                overflow-y:auto;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+            }
+            .profile-list-el:not(:first-child) {
+                margin-top: 7px;
+            }
+            .profile-card-wrapper {
+                @include inter_text;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 35px;
+                width: 280px;
+                .profile-card-number {
+                    color: $sand;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .modal-hidden {
+        display: none;
+    }
 }
 .header {
     display: flex;
@@ -325,7 +438,7 @@ body {
             // margin-top: 5px;
             line-height: 1;
             cursor: pointer;
-            z-index: 3;
+            // z-index: 3;
             &::after {
                 content: "";
                 position: absolute;
@@ -366,7 +479,7 @@ body {
             width: 45px;
             height: 22px;
             margin-top: -2px;
-            z-index: 3;
+            // z-index: 3;
             @media screen and (max-width:1024px) {
                 display: flex;
                 flex-direction: column;
@@ -463,6 +576,9 @@ body {
                 right: -100px;
                 opacity: 0;
             }
+        }
+        .brgr-menu-zindex {
+            z-index: 3;
         }
     }
     .header-nav {
@@ -1077,6 +1193,7 @@ body {
                             color:$sand;
                         }
                         .card-number {
+                            text-transform: none;
                             margin-top: 25px;
                         }
                         .card-number-typing {

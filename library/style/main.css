@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap");
-.main .section__h {
+.main .section__h, .container .modal-profile .profile-main .profile-head {
   font-family: "Forum";
   font-size: 40px;
   font-style: normal;
@@ -109,7 +109,6 @@ body {
   width: 80px;
   background-color: #FFFFFF;
   z-index: 1;
-  padding: 0px 10px 0px;
   transition: height 0.3s ease-in-out;
 }
 @media (max-width: 1024px) {
@@ -126,6 +125,9 @@ body {
   text-align: center;
   line-height: 20px;
   cursor: pointer;
+}
+.container .profile-menu .menu-head-cardid {
+  font-size: 10px;
 }
 .container .profile-menu hr {
   width: 39px;
@@ -147,9 +149,6 @@ body {
 }
 .container .profile-menu-hidden {
   height: 0px;
-}
-.container .modal-hidden {
-  display: none;
 }
 .container .modal-head {
   font-family: "Forum";
@@ -350,6 +349,139 @@ body {
   font-style: normal;
   font-weight: 400;
 }
+.container .modal-profile {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  top: calc(100vh - 50% - 200px);
+  left: calc(100vw - 50% - 300px);
+  height: 400px;
+  width: 600px;
+  background-color: #FFFFFF;
+  z-index: 1;
+}
+.container .modal-profile .profile-side {
+  background-color: #0C0C0E;
+}
+.container .modal-profile .profile-side .profile-initials {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  margin: 139px auto 15px auto;
+  background-color: #FFFFFF;
+  line-height: 20px; /* 100% */
+  text-transform: uppercase;
+  color: #BB945F;
+}
+.container .modal-profile .profile-side .profile-username {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 120px;
+  padding: 5px 15px;
+  color: #000;
+  line-height: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  min-height: 30px;
+}
+.container .modal-profile .profile-main {
+  padding: 25px 25px 39px 20px;
+}
+.container .modal-profile .profile-main .profile-head {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 5px 0 0 0;
+}
+.container .modal-profile .profile-main .modal-close-btn {
+  top: 23px;
+  right: 23px;
+}
+.container .modal-profile .profile-main .profile-user-info {
+  display: grid;
+  grid-template-columns: 53px 84px 60px;
+  margin: 30px 0 0 0;
+  width: 237px;
+  height: 81px;
+  justify-content: space-between;
+}
+.container .modal-profile .profile-main .profile-user-info img {
+  display: block;
+  height: 21px;
+  width: 21px;
+  margin: 0 auto;
+}
+.container .modal-profile .profile-main .profile-user-info div {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .modal-profile .profile-main .profile-user-info span {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+.container .modal-profile .profile-main .profile-user-info .user-info-counter {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+}
+.container .modal-profile .profile-main .profile-rented-books {
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 16px 0 0 0;
+}
+.container .modal-profile .profile-main .profile-books-list {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  width: 370px;
+  height: 55px;
+  margin-top: 23px;
+  padding: 0 0 0 30px;
+  overflow-y: auto;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.container .modal-profile .profile-main .profile-list-el:not(:first-child) {
+  margin-top: 7px;
+}
+.container .modal-profile .profile-main .profile-card-wrapper {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  width: 280px;
+}
+.container .modal-profile .profile-main .profile-card-wrapper .profile-card-number {
+  color: #BB945F;
+  text-transform: uppercase;
+}
+.container .modal-hidden {
+  display: none;
+}
 
 .header {
   display: flex;
@@ -379,7 +511,6 @@ body {
   position: relative;
   line-height: 1;
   cursor: pointer;
-  z-index: 3;
 }
 .header .header-wrap .profile-wrapper::after {
   content: "";
@@ -424,7 +555,6 @@ body {
   width: 45px;
   height: 22px;
   margin-top: -2px;
-  z-index: 3;
 }
 @media screen and (max-width: 1024px) {
   .header .header-wrap .brgr-menu {
@@ -515,6 +645,9 @@ body {
 .header .header-wrap .brgr-menu__opened .brgr-line:nth-child(2)::after {
   right: -100px;
   opacity: 0;
+}
+.header .header-wrap .brgr-menu-zindex {
+  z-index: 3;
 }
 .header .header-nav {
   flex-basis: 584px;
@@ -1198,6 +1331,7 @@ body {
   color: #BB945F;
 }
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .card-number {
+  text-transform: none;
   margin-top: 25px;
 }
 .main .library-cards .cards-wrapper .find-card-wrapper .find-card-form-outer .find-card-form-inner .card-number-typing {
