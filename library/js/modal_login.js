@@ -1,11 +1,13 @@
 import { loginPreparation as logIn, logOutPreparation as logOut } from './LogIn_logOut-preparations.js'
 import { toggleRegister } from './modal_register.js'
 import { toggleProfile } from './modal_profile.js';
+import { toggleBuyCard } from './buy_a_card.js'
+import { buyBook } from './buy_a_book.js'
 const profileLogIn = document.querySelector('.menu-text:nth-child(1)');
 const btnLogIn = document.querySelector('.login');
 const background = document.querySelector('.bg');
 const modalLogIn = document.querySelector('.modal-login');
-const closeModalBtn = document.querySelectorAll('.modal-close-btn');
+const closeModalBtn = document.querySelector('.modal-login > .modal-close-btn');
 const pwdInput = document.getElementById('password-login');
 const emailInput = document.getElementById('email-login');
 const inputLabels = document.querySelectorAll('.modal-input-label');
@@ -51,11 +53,11 @@ function logInUser() {
     const usersDb = JSON.parse(localStorage.getItem('usersDB'));
     const isExist =usersDb.find(el => {
         if (emailInput.value.length == 9) {
-            if (emailInput.value.toUpperCase() == el.cardId && pwdInput.value == el.password) {
+            if (emailInput.value.toUpperCase().trim() == el.cardId && pwdInput.value == el.password) {
                 return true;
             }
         } else {
-            if (emailInput.value == el.email && pwdInput.value == el.password) {
+            if (emailInput.value.trim() == el.email && pwdInput.value == el.password) {
                 return true;
             }
         }
@@ -65,6 +67,8 @@ function logInUser() {
     }
     sessionStorage.setItem('currentUser', JSON.stringify(usersDb.indexOf(isExist)));
     if (isExist) {
+        usersDb[usersDb.indexOf(isExist)].visitAmount++
+        localStorage.setItem('usersDB', JSON.stringify(usersDb));
         toggleLogIn();
         logIn(usersDb.indexOf(isExist));
     }
@@ -72,8 +76,14 @@ function logInUser() {
 
 buyBtn.forEach(el => {
     el.addEventListener('click', function() {
-        if (!localStorage.getItem('currentUser')) {
+        const usersDb = JSON.parse(localStorage.getItem('usersDB'));
+        const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+        if (!sessionStorage.getItem('currentUser')) {
             toggleLogIn();
+        } else if (!usersDb[currentUser].isCardActive){
+            toggleBuyCard();
+        } else {
+            buyBook(event.target);
         }
     })
 })
@@ -96,4 +106,5 @@ registerLink.addEventListener('click', function() {
     toggleLogIn();
     toggleRegister();
 })
-closeModalBtn[1].addEventListener('click', toggleLogIn);
+
+closeModalBtn.addEventListener('click', toggleLogIn);

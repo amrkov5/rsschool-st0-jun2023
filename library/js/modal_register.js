@@ -4,7 +4,7 @@ const profileRegister = document.querySelector('.menu-text:nth-child(2)');
 const btnRegister = document.querySelector('.signup');
 const background = document.querySelector('.bg');
 const modalRegister = document.querySelector('.modal-register');
-const closeModalRegister = document.querySelector('.modal-close-btn');
+const closeModalRegister = document.querySelector('.modal-register > .modal-close-btn');
 const pwdInput = document.getElementById('password');
 const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('lastName');
@@ -66,12 +66,12 @@ function generateCardID() {
 function registerUser() {
     let usersDb = []
     let userObj = {
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
-        email: emailInput.value,
+        firstName: firstNameInput.value.trim(),
+        lastName: lastNameInput.value.trim(),
+        email: emailInput.value.trim(),
         password: pwdInput.value,
         cardId: generateCardID(),
-        visitAmount: 0,
+        visitAmount: 1,
         bonuses: 0,
         booksBought: [],
         isCardActive: false,

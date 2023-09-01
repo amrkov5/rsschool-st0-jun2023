@@ -7,7 +7,7 @@ const menu = document.querySelector('.menu');
 function toggleMenu() { 
     if (event.target == iconProfile && background.classList.contains('bg-hidden') && menu.classList.contains('menu-hidden')) {
         profileMenu.classList.toggle('profile-menu-hidden')
-    } else if (event.target != profileMenu && !profileMenu.classList.contains('profile-menu-hidden')) {
+    } else if (event.target != profileMenu && !profileMenu.classList.contains('profile-menu-hidden') && event.target != profileMenu.firstElementChild) {
         profileMenu.classList.add('profile-menu-hidden')
     } else if (event.target == iconProfile && !background.classList.contains('bg-hidden') && !menu.classList.contains('menu-hidden')) {
         toggleBurgerMenu()

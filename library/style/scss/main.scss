@@ -386,7 +386,7 @@ body {
             }
             .profile-books-list {
                 @include inter_text;
-                width: 370px;
+                width: 390px;
                 height: 55px;
                 margin-top: 23px;
                 padding: 0 0 0 30px;
@@ -407,6 +407,112 @@ body {
                     color: $sand;
                     text-transform: uppercase;
                 }
+                .clipboard-btn {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .modal-buy-card {
+        position: fixed;
+        display: grid;
+        grid-template-rows: 60px 1fr;
+        top: calc(100vh - 50% - 270px);
+        left: calc(100vw - 50% - 320px);
+        height: 540px;
+        width: 640px;
+        background-color: $white;
+        z-index: 1;
+        .modal-head-part {
+            background-color: $dark;
+            padding-top: 10px;
+            .modal-head {
+                @extend %forum_h2;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                text-align: center;
+                color: #FFFFFF;
+                margin: 0;
+            }
+            path {
+                stroke: #FFFFFF;
+            }
+            .modal-close-btn {
+                top:24px;
+                right: 20px;
+            }
+        }
+        .modal-buy-main {
+            @include inter_text(15px);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            padding: 30px 39px 40px 40px;
+            line-height: 20px; /* 133.333% */
+            letter-spacing: 0.3px;
+            .form-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .card-form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 170px;
+                    width: 100%;
+                    .buy-card-exp-code {
+                        width: 100px;
+                        display: flex;
+                        justify-content: space-between;
+                        #exp-code-month,
+                        #exp-code-year,
+                        #cvc-code {
+                            width: 45px;
+                        }
+                    }
+                    #cvc-code {
+                        width: 45px;
+                    }
+                }
+                .user-form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 170px;
+                }
+                .buy-card-money {
+                    width: 188px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+                    span {
+                        @include inter_text(20px, 700);
+                        text-align:right;
+                        letter-spacing: 2px;
+                    }
+                    .buy-card-btn {
+                        @include inter_text(10px, 700);
+                        width: 75px;
+                        height: 30px;
+                        letter-spacing: 1px;
+                        background-color: #FFFFFF;
+                        border: $dark solid 1px;
+                        border-radius: 2px;
+                        transition: 0.3s ease-in-out;
+                        &:hover {
+                            background-color: $sand;
+                            border-color: $sand;
+    
+                        }
+                    }
+                }
+            }
+            .buy-card-text {
+                @include inter_text(15px);
+                margin-left: 40px;
+                letter-spacing: 2px;
+                color: #8E8E8E;
             }
         }
     }
@@ -1277,11 +1383,15 @@ body {
                         margin-top: 39px;
                     }
                 }
+                .get-card-text-hidden {
+                    display: none;
+                }
                 .btn-wrapper {
                     width: 171px;
                     margin: 35px 0 0 auto;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content:end;
+                    
                     @media screen and (max-width:1100px) {
                         margin: 15px auto 0 auto;
                     }
@@ -1297,6 +1407,9 @@ body {
                     letter-spacing: 1px;
                     transition: 0.3s ease-in-out;
                     line-height: 10px;
+                    &:first-child {
+                        margin-right: 25px;
+                    }
                     @media (hover:hover) {
                         &:hover {
                             background-color: $sand;
@@ -1307,6 +1420,9 @@ body {
                     @media screen and (max-width:1100px) {
                         margin-top: 20.5px;
                     }
+                }
+                .get-card-btn-hidden {
+                    display: none;
                 }
             }
         }

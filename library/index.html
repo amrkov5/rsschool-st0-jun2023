@@ -48,7 +48,7 @@
                 <label class="modal-input-label" for="e-mail">E-mail</label>
                 <input class="modal-input" type="text" name="e-mail" id="e-mail">
                 <label class="modal-input-label" for="password">Password</label>
-                <input class="modal-input" type="text" name="password" id="password">
+                <input class="modal-input" type="password" name="password" id="password">
             </form>
             <button class="register-btn">Sign Up</button>
             <div class="register-login">
@@ -80,8 +80,8 @@
         </div>
         <div class="modal-profile modal-hidden">
             <div class="profile-side">
-                <div class="profile-initials">jd</div>
-                <div class="profile-username">John Doe</div>
+                <div class="profile-initials"></div>
+                <div class="profile-username"></div>
             </div>
             <div class="profile-main">
                 <p class="profile-head">my profile</p>
@@ -112,13 +112,61 @@
                 </div>
                 <p class="profile-rented-books">Rented books</p>
                 <ul class="profile-books-list">
-                    <li class="profile-list-el">The Last Queen, Clive Irving</li>
-                    <li class="profile-list-el">Dominicana, Angie Cruz</li>
                 </ul>
                 <div class="profile-card-wrapper">
                     <span class="profile-card-text">Card number</span>
                     <span class="profile-card-number">F00234030</span>
-                    <img src="./assets/icons/icon copy.svg" alt="clipboard-icon">
+                    <img class="clipboard-btn" src="./assets/icons/icon copy.svg" alt="clipboard-icon">
+                </div>
+            </div>
+        </div>
+        <div class="modal-buy-card modal-hidden">
+            <div class="modal-head-part">
+                <div class="modal-close-btn">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="close_btn">
+                            <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                            <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+                <p class="modal-head">Buy a library card</p>
+            </div>
+            <div class="modal-buy-main">
+                <div class="form-wrapper">
+                    <form class="card-form" action="">
+                        <label class="modal-buy-label" for="card-number">Bank card number</label>
+                        <input class="modal-input" type="text" name="card-number" id="card-number">
+                        <label class="modal-buy-label" for="expiration-code">Expiration date</label>
+                        <div class="buy-card-exp-code">
+                            <input class="modal-input" type="text" name="expiration-code" id="exp-code-month">
+                            <input class="modal-input" type="text" name="expiration-code" id="exp-code-year">
+                        </div>
+                        <label class="modal-buy-label" for="cvc-code">CVC</label>
+                        <input class="modal-input" type="text" name="cvc-code" id="cvc-code">
+                    </form>
+                    <form class="user-form" action="">
+                        <label class="modal-buy-label" for="cardholder">Cardholder name</label>
+                        <input class="modal-input" type="text" name="cardholder" id="cardholder">
+                        <label class="modal-buy-label" for="postal-code">Postal code</label>
+                        <input class="modal-input" type="text" name="postal-code" id="postal-code">
+                        <label class="modal-buy-label" for="city">City / Town</label>
+                        <input class="modal-input" type="text" name="city" id="city">
+                    </form>
+                    <div class="buy-card-money">
+                        <button class="buy-card-btn" disabled>Buy</button>
+                        <span>$ 25.00</span>
+                    </div>
+                </div>
+                <div class="buy-card-text">
+                    <span>If you are live, work, attend school,<br>
+                        or pay property taxes in New York<br>
+                        State, you can get a $25 digital<br>
+                        library card right now using this<br>
+                        online form. Visitors to New York<br>
+                        State can also use this form to<br>
+                        apply for a temporary card.
+                    </span>
                 </div>
             </div>
         </div>
@@ -244,8 +292,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Cackle</span><br>
-                                By Rachel Harrison</p>
+                            <p class="book-title-author"><span>Cackle</span><br>By Rachel Harrison</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
@@ -258,8 +305,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Dante: Poet of the Secular World</span><br>
-                                By Erich Auerbach</p>
+                            <p class="book-title-author"><span>Dante: Poet of the Secular World</span><br>By Erich Auerbach</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Auerbach's engaging book places the<br>
@@ -279,8 +325,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Last Queen</span><br>
-                                By Clive Irving</p>
+                            <p class="book-title-author"><span>The Last Queen</span><br>By Clive Irving</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A timely and revelatory new<br>
@@ -315,8 +360,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Carry: A Memoir of Survival on Stolen Land</span><br>
-                                By Toni Jenson</p>
+                            <p class="book-title-author"><span>Carry: A Memoir of Survival on Stolen Land</span><br>By Toni Jenson</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     This memoir about the author's<br>
@@ -333,8 +377,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Days of Distraction</span><br>
-                                By Alexandra Chang</p>
+                            <p class="book-title-author"><span>Days of Distraction</span><br>By Alexandra Chang</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A sardonic view of Silicon Valley<br>
@@ -351,8 +394,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Dominicana</span><br>
-                                By Angie Cruz</p>
+                            <p class="book-title-author"><span>Dominicana</span><br>By Angie Cruz</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A fascinating story of a teenage girl<br>
@@ -391,8 +433,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Let My People Go Surfing</span><br>
-                                By Yvon Chouinard</p>
+                            <p class="book-title-author"><span>Let My People Go Surfing</span><br>By Yvon Chouinard</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Chouinard—climber, businessman,<br>
@@ -412,8 +453,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Octopus Museum: Poems</span><br>
-                                By Brenda Shaughnessy</p>
+                            <p class="book-title-author"><span>The Octopus Museum: Poems</span><br>By Brenda Shaughnessy</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     This collection of bold and scathingly<br>
@@ -430,8 +470,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Shark Dialogues: A Novel</span><br>
-                                By Kiana Davenport</p>
+                            <p class="book-title-author"><span>Shark Dialogues: A Novel</span><br>By Kiana Davenport</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     An epic saga of seven generations of<br>
@@ -472,8 +511,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Great Fire</span><br>
-                                By Lou Ureneck</p>
+                            <p class="book-title-author"><span>The Great Fire</span><br>By Lou Ureneck</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     The harrowing story of an ordinary<br>
@@ -492,8 +530,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Rickey: The Life and Legend</span><br>
-                                By Howard Bryant</p>
+                            <p class="book-title-author"><span>Rickey: The Life and Legend</span><br>By Howard Bryant</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     With the fall rolling around, one can't<br>
@@ -512,8 +549,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Slug: And Other Stories</span><br>
-                                By Megan Milks</p>
+                            <p class="book-title-author"><span>Slug: And Other Stories</span><br>By Megan Milks</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Exes Tegan and Sara find themselves<br>
@@ -662,9 +698,11 @@
                         <p class="get-card-text">You will be able to see a reader card after
                             logging into account or you can register a new account
                         </p>
+                        <p class="get-card-text get-card-text-hidden">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
                         <div class="btn-wrapper">
                             <button class="get-card-btn signup">Sign Up</button>
                             <button class="get-card-btn login">Log in</button>
+                            <button class="get-card-btn profile get-card-btn-hidden">Profile</button>
                         </div>
                         
                     </div>
@@ -697,10 +735,11 @@
     <script src="./js/burger_menu.js" type="module"></script>
     <script src="./js/about_slider.js"></script>
     <script src="./js/favorites_selector_v3.js"></script>
-    <script src="./js/profile_menu.js" type="module"></script>
+    <script type="module" src="./js/profile_menu.js"></script>
     <script type="module" src="./js/modal_register.js"></script>
     <script type="module" src="./js/modal_login.js"></script>
-    <script src="./js/check_user.js"></script>
+    <script type="module" src="./js/check_user.js"></script>
     <script type="module" src="./js/modal_profile.js"></script>
+    <script type="module" src="./js/buy_a_card.js"></script>
 </body>
 </html>

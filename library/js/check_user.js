@@ -4,27 +4,33 @@ const cardInput = document.querySelector('.card-number');
 
 function checkUsersInfo() {
     const usersDb = JSON.parse(localStorage.getItem('usersDB'));
-    const userInfo = document.querySelector('.user-info');
-    const userCounters = document.querySelectorAll('.user-info-counter');
-    console.log(cardInput.value)
-    foundUser = usersDb.find(element => { 
-        if (cardInput.value == element.cardId && nameInput.value.toLowerCase() == `${element.firstName} ${element.lastName}`.toLocaleLowerCase()) {
+    const foundUser = usersDb.find(element => {
+        if (cardInput.value == element.cardId && nameInput.value.toLowerCase().trim() == `${element.firstName} ${element.lastName}`.toLocaleLowerCase()) {
             return true
         }
     });
     if (foundUser) {
-        chkBtn.classList.toggle('user-info-hidden');
-        userInfo.classList.toggle('user-info-hidden');
-        userCounters[0].textContent = `${foundUser.visitAmount}`;
-        userCounters[1].textContent = `${foundUser.bonuses}`;
-        userCounters[2].textContent = `${foundUser.booksBought.length}`
+        toggleUserInfo();
+        updateUserInfo(foundUser);
         setTimeout( function() {
-            chkBtn.classList.toggle('user-info-hidden');
-            userInfo.classList.toggle('user-info-hidden');
+            toggleUserInfo();
             nameInput.value = '';
             cardInput.value = '';
         },10000)
     }
+}
+
+export function updateUserInfo(foundUser) {
+    const userCounters = document.querySelectorAll('.user-info-counter');
+    userCounters[3].textContent = `${foundUser.visitAmount}`;
+    userCounters[4].textContent = `${foundUser.bonuses}`;
+    userCounters[5].textContent = `${foundUser.booksBought.length}`
+}
+
+export function toggleUserInfo() {
+    const userInfo = document.querySelector('.user-info');
+    chkBtn.classList.toggle('user-info-hidden');
+    userInfo.classList.toggle('user-info-hidden');
 }
 
 chkBtn.addEventListener('click', checkUsersInfo)

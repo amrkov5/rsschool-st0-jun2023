@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap");
-.main .section__h, .container .modal-profile .profile-main .profile-head {
+.main .section__h, .container .modal-buy-card .modal-head-part .modal-head, .container .modal-profile .profile-main .profile-head {
   font-family: "Forum";
   font-size: 40px;
   font-style: normal;
@@ -454,7 +454,7 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  width: 370px;
+  width: 390px;
   height: 55px;
   margin-top: 23px;
   padding: 0 0 0 30px;
@@ -478,6 +478,120 @@ body {
 .container .modal-profile .profile-main .profile-card-wrapper .profile-card-number {
   color: #BB945F;
   text-transform: uppercase;
+}
+.container .modal-profile .profile-main .profile-card-wrapper .clipboard-btn:hover {
+  cursor: pointer;
+}
+.container .modal-buy-card {
+  position: fixed;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  top: calc(100vh - 50% - 270px);
+  left: calc(100vw - 50% - 320px);
+  height: 540px;
+  width: 640px;
+  background-color: #FFFFFF;
+  z-index: 1;
+}
+.container .modal-buy-card .modal-head-part {
+  background-color: #0C0C0E;
+  padding-top: 10px;
+}
+.container .modal-buy-card .modal-head-part .modal-head {
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0;
+}
+.container .modal-buy-card .modal-head-part path {
+  stroke: #FFFFFF;
+}
+.container .modal-buy-card .modal-head-part .modal-close-btn {
+  top: 24px;
+  right: 20px;
+}
+.container .modal-buy-card .modal-buy-main {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 30px 39px 40px 40px;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: 0.3px;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 170px;
+  width: 100%;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form .buy-card-exp-code {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form .buy-card-exp-code #exp-code-month,
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form .buy-card-exp-code #exp-code-year,
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form .buy-card-exp-code #cvc-code {
+  width: 45px;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .card-form #cvc-code {
+  width: 45px;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 170px;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .buy-card-money {
+  width: 188px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .buy-card-money span {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  text-align: right;
+  letter-spacing: 2px;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .buy-card-money .buy-card-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  width: 75px;
+  height: 30px;
+  letter-spacing: 1px;
+  background-color: #FFFFFF;
+  border: #0C0C0E solid 1px;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+.container .modal-buy-card .modal-buy-main .form-wrapper .buy-card-money .buy-card-btn:hover {
+  background-color: #BB945F;
+  border-color: #BB945F;
+}
+.container .modal-buy-card .modal-buy-main .buy-card-text {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 40px;
+  letter-spacing: 2px;
+  color: #8E8E8E;
 }
 .container .modal-hidden {
   display: none;
@@ -1432,11 +1546,14 @@ body {
     margin-top: 39px;
   }
 }
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-text-hidden {
+  display: none;
+}
 .main .library-cards .cards-wrapper .get-card-wrapper .btn-wrapper {
   width: 171px;
   margin: 35px 0 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 @media screen and (max-width: 1100px) {
   .main .library-cards .cards-wrapper .get-card-wrapper .btn-wrapper {
@@ -1458,6 +1575,9 @@ body {
   transition: 0.3s ease-in-out;
   line-height: 10px;
 }
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn:first-child {
+  margin-right: 25px;
+}
 @media (hover: hover) {
   .main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn:hover {
     background-color: #BB945F;
@@ -1469,6 +1589,9 @@ body {
   .main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn {
     margin-top: 20.5px;
   }
+}
+.main .library-cards .cards-wrapper .get-card-wrapper .get-card-btn-hidden {
+  display: none;
 }
 
 .footer {
