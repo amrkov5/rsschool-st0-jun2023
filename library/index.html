@@ -22,6 +22,154 @@
                 </ul>
             </nav>
         </div>
+        <div class="profile-menu profile-menu-hidden">
+            <p class="menu-head">Profile</p>
+            <hr>
+            <div class="menu-text-wrapper">
+                <p class="menu-text">Log In</p>
+                <p class="menu-text">Register</p>
+            </div>
+        </div>
+        <div class="modal-register modal-hidden">
+            <h3 class="modal-head">register</h3>
+            <div class="modal-close-btn">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="close_btn">
+                    <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                    <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                    </g>
+                </svg>
+            </div>
+            <form class="register-form" action="">
+                <label class="modal-input-label" for="firstName">First name</label>
+                <input class="modal-input" type="text" name="firstName" id="firstName">
+                <label class="modal-input-label" for="lastName">Last name</label>
+                <input class="modal-input" type="text" name="lastName" id="lastName">
+                <label class="modal-input-label" for="e-mail">E-mail</label>
+                <input class="modal-input" type="text" name="e-mail" id="e-mail">
+                <label class="modal-input-label" for="password">Password</label>
+                <input class="modal-input" type="password" name="password" id="password">
+            </form>
+            <button class="register-btn">Sign Up</button>
+            <div class="register-login">
+                <span class="question-text">Already have an account?</span>
+                <span class="login-link">Login</span>
+            </div>
+        </div>
+        <div class="modal-login modal-hidden">
+            <h3 class="modal-head">login</h3>
+            <div class="modal-close-btn">
+                <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="close_btn">
+                    <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                    <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                    </g>
+                </svg>
+            </div>
+            <form class="login-form" action="">
+                <label class="modal-input-label" for="email-login">E-mail or reader's card</label>
+                <input class="modal-input" type="text" name="email" id="email-login">
+                <label class="modal-input-label" for="password-login">Password</label>
+                <input class="modal-input" type="password" name="password" id="password-login">
+            </form>
+            <button class="login-btn">Log In</button>
+            <div class="register-login">
+                <span class="question-text">Don’t have an account?</span>
+                <span class="register-link">Register</span>
+            </div>
+        </div>
+        <div class="modal-profile modal-hidden">
+            <div class="profile-side">
+                <div class="profile-initials"></div>
+                <div class="profile-username"></div>
+            </div>
+            <div class="profile-main">
+                <p class="profile-head">my profile</p>
+                <div class="modal-close-btn">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="close_btn">
+                            <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                            <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-user-info">
+                    <div>
+                        <span>Visits</span>
+                        <img src="./assets/icons/Union.svg" alt="user_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                    <div>
+                        <span>Bonuses</span>
+                        <img src="./assets/icons/Star.svg" alt="star_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                    <div>
+                        <span>Books</span>
+                        <img src="./assets/icons/book.svg" alt="book_icon" class="info-cards">
+                        <span class="user-info-counter">-</span>
+                    </div>
+                </div>
+                <p class="profile-rented-books">Rented books</p>
+                <ul class="profile-books-list">
+                </ul>
+                <div class="profile-card-wrapper">
+                    <span class="profile-card-text">Card number</span>
+                    <span class="profile-card-number">F00234030</span>
+                    <img class="clipboard-btn" src="./assets/icons/icon copy.svg" alt="clipboard-icon">
+                </div>
+            </div>
+        </div>
+        <div class="modal-buy-card modal-hidden">
+            <div class="modal-head-part">
+                <div class="modal-close-btn">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="close_btn">
+                            <path id="Line 5" d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                            <path id="Line 6" d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+                <p class="modal-head">Buy a library card</p>
+            </div>
+            <div class="modal-buy-main">
+                <div class="form-wrapper">
+                    <form class="card-form" action="">
+                        <label class="modal-buy-label" for="card-number">Bank card number</label>
+                        <input class="modal-input" type="text" name="card-number" id="card-number">
+                        <label class="modal-buy-label" for="expiration-code">Expiration date</label>
+                        <div class="buy-card-exp-code">
+                            <input class="modal-input" type="text" name="expiration-code" id="exp-code-month">
+                            <input class="modal-input" type="text" name="expiration-code" id="exp-code-year">
+                        </div>
+                        <label class="modal-buy-label" for="cvc-code">CVC</label>
+                        <input class="modal-input" type="text" name="cvc-code" id="cvc-code">
+                    </form>
+                    <form class="user-form" action="">
+                        <label class="modal-buy-label" for="cardholder">Cardholder name</label>
+                        <input class="modal-input" type="text" name="cardholder" id="cardholder">
+                        <label class="modal-buy-label" for="postal-code">Postal code</label>
+                        <input class="modal-input" type="text" name="postal-code" id="postal-code">
+                        <label class="modal-buy-label" for="city">City / Town</label>
+                        <input class="modal-input" type="text" name="city" id="city">
+                    </form>
+                    <div class="buy-card-money">
+                        <button class="buy-card-btn" disabled>Buy</button>
+                        <span>$ 25.00</span>
+                    </div>
+                </div>
+                <div class="buy-card-text">
+                    <span>If you are live, work, attend school,<br>
+                        or pay property taxes in New York<br>
+                        State, you can get a $25 digital<br>
+                        library card right now using this<br>
+                        online form. Visitors to New York<br>
+                        State can also use this form to<br>
+                        apply for a temporary card.
+                    </span>
+                </div>
+            </div>
+        </div>
         <header class="header">
         <h1 class="header__text">Brooklyn Public Library</h1>
         <div class="header-wrap">
@@ -35,8 +183,9 @@
                 </ul>
             </nav>
             <div class="profile-wrapper">
+                <div class="profile_initials icon_profile_hidden"></div>
                 <svg class="icon-profile" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="icon_profile">
+                    <g id="icon_profile_g">
                         <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
                     </g>
                 </svg>
@@ -58,24 +207,30 @@
                 <p class="about__text">The Brooklyn Library is a free workspace, 
                     a large number of books and a cozy coffee shop inside</p>
                 <div class="about-image-wrapper">
-                    <div class="carret">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <div>
+                        <svg class="carret" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <img src="./assets/img/about/image_1.png" alt="library_photo" class="about__img">
-                    <img src="./assets/img/about/image_2.png" alt="library_photo" class="about__img">
-                    <img src="./assets/img/about/image_3.png" alt="library_photo" class="about__img">
-                    <div class="carret">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <div class="image-wrapper-outer">
+                        <div class="image-wrapper-inner">
+                            <img src="./assets/img/about/image_1.png" alt="library_photo" class="about__img">
+                            <img src="./assets/img/about/image_2.png" alt="library_photo" class="about__img">
+                            <img src="./assets/img/about/image_3.png" alt="library_photo" class="about__img">
+                            <img src="./assets/img/about/image_4.png" alt="library_photo" class="about__img">
+                            <img src="./assets/img/about/image_5.png" alt="library_photo" class="about__img">
+                        </div>
+                    </div>
+                    <div>
+                        <svg class="carret" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                             <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                 </div>
                 <div class="paginator-wrapper">
                     <div class="buttons">
-                        <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#BB945F"/>
+                        <svg class="paginator active" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
                         </svg>
                         <svg class="paginator" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                             <rect x="5" y="5" width="16" height="16" rx="8" fill="#0C0C0E"/>
@@ -94,26 +249,28 @@
             </section>
             <section class="favorites" id="favorites">
                 <h2 class="section__h">Favorites</h2>
-                <p class="favorites__text">Pick favorites of season</p>
-                <div class="selector-wrapper">
-                    <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="winter" checked>
-                        <label class="label" for="winter">Winter</label>
-                    </div>
-                    <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="spring">
-                        <label class="label" for="spring">Spring</label>
-                    </div>
+                <div class="selectors-container">
+                    <p class="favorites__text">Pick favorites of season</p>
+                    <div class="selector-wrapper">
                         <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="summer">
-                        <label class="label" for="summer">Summer</label>
-                    </div>
+                            <input type="radio" class = "selector" name = "seasons" id="winter" checked>
+                            <label class="label" for="winter">Winter</label>
+                        </div>
                         <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="autumn">
-                        <label class="label" for="autumn">Autumn</label>
+                            <input type="radio" class = "selector" name = "seasons" id="spring">
+                            <label class="label" for="spring">Spring</label>
+                        </div>
+                            <div class="selector-wrap">
+                            <input type="radio" class = "selector" name = "seasons" id="summer">
+                            <label class="label" for="summer">Summer</label>
+                        </div>
+                            <div class="selector-wrap">
+                            <input type="radio" class = "selector" name = "seasons" id="autumn">
+                            <label class="label" for="autumn">Autumn</label>
+                        </div>
                     </div>
                 </div>
-                <div class="books-wrapper winter">
+                <div class="books-wrapper winter book-wrapper-visible">
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
@@ -137,8 +294,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Cackle</span><br>
-                                By Rachel Harrison</p>
+                            <p class="book-title-author"><span>Cackle</span><br>By Rachel Harrison</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
@@ -151,8 +307,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Dante: Poet of the Secular World</span><br>
-                                By Erich Auerbach</p>
+                            <p class="book-title-author"><span>Dante: Poet of the Secular World</span><br>By Erich Auerbach</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Auerbach's engaging book places the<br>
@@ -172,8 +327,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Last Queen</span><br>
-                                By Clive Irving</p>
+                            <p class="book-title-author"><span>The Last Queen</span><br>By Clive Irving</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A timely and revelatory new<br>
@@ -182,7 +336,7 @@
                                     have evolved and thrived as the<br>
                                     modern world has changed around them.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/winter/last_queen.png" alt="the_last_queen_pic">
                         </div>
@@ -208,8 +362,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Carry: A Memoir of Survival on Stolen Land</span><br>
-                                By Toni Jenson</p>
+                            <p class="book-title-author"><span>Carry: A Memoir of Survival on Stolen Land</span><br>By Toni Jenson</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     This memoir about the author's<br>
@@ -226,8 +379,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Days of Distraction</span><br>
-                                By Alexandra Chang</p>
+                            <p class="book-title-author"><span>Days of Distraction</span><br>By Alexandra Chang</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A sardonic view of Silicon Valley<br>
@@ -244,8 +396,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Dominicana</span><br>
-                                By Angie Cruz</p>
+                            <p class="book-title-author"><span>Dominicana</span><br>By Angie Cruz</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     A fascinating story of a teenage girl<br>
@@ -256,7 +407,7 @@
                                     fans of Isabel Allende and Julia<br>
                                     Alvarez.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/spring/dominicana.png" alt="dominicana_pic">
                         </div>
@@ -284,8 +435,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Let My People Go Surfing</span><br>
-                                By Yvon Chouinard</p>
+                            <p class="book-title-author"><span>Let My People Go Surfing</span><br>By Yvon Chouinard</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Chouinard—climber, businessman,<br>
@@ -305,8 +455,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Octopus Museum: Poems</span><br>
-                                By Brenda Shaughnessy</p>
+                            <p class="book-title-author"><span>The Octopus Museum: Poems</span><br>By Brenda Shaughnessy</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     This collection of bold and scathingly<br>
@@ -323,8 +472,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Shark Dialogues: A Novel</span><br>
-                                By Kiana Davenport</p>
+                            <p class="book-title-author"><span>Shark Dialogues: A Novel</span><br>By Kiana Davenport</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     An epic saga of seven generations of<br>
@@ -336,7 +484,7 @@
                                     and revolutionaries, lepers and<br>
                                     healers.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/summer/shark_dialogues.png" alt="shark_dialogues_pic">
                         </div>
@@ -365,8 +513,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>The Great Fire</span><br>
-                                By Lou Ureneck</p>
+                            <p class="book-title-author"><span>The Great Fire</span><br>By Lou Ureneck</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     The harrowing story of an ordinary<br>
@@ -385,8 +532,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Rickey: The Life and Legend</span><br>
-                                By Howard Bryant</p>
+                            <p class="book-title-author"><span>Rickey: The Life and Legend</span><br>By Howard Bryant</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     With the fall rolling around, one can't<br>
@@ -405,8 +551,7 @@
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
-                            <p class="book-title-author"><span>Slug: And Other Stories</span><br>
-                                By Megan Milks</p>
+                            <p class="book-title-author"><span>Slug: And Other Stories</span><br>By Megan Milks</p>
                             <div class="book-description-wrapper">
                                 <p class="book-description">
                                     Exes Tegan and Sara find themselves<br>
@@ -416,7 +561,7 @@
                                     giving birth to gods from their<br>
                                     wounds.
                                 </p>
-                                <button class="own-book-btn" disabled>Own</button>
+                                <button class="buy-book-btn">Buy</button>
                             </div>
                             <img class="book-pic" src="./assets/img/favorite/autumn/slug.png" alt="slug_pic">
                         </div>
@@ -527,10 +672,27 @@
                         <div class="find-card-form-outer">
                             <div class="find-card-form-inner">
                                 <p class="form-text">Brooklyn Public Library</p>
-                                <input class="form-input name" type="text" pattern="[a-zA-Z0-9-]*" placeholder="Reader's name">
-                                <input class="form-input card-number" type="text" pattern="[0-9]" placeholder="Card number">
+                                <input class="form-input name" type="text" placeholder="Reader's name">
+                                <input class="form-input card-number" type="text" placeholder="Card number">
                             </div>
                             <button class="chk_card">Check the card</button>
+                            <div class="user-info user-info-hidden">
+                                <div>
+                                    <span>Visits</span>
+                                    <img src="./assets/icons/Union.svg" alt="user_icon" class="info-cards">
+                                    <span class="user-info-counter">23</span>
+                                </div>
+                                <div>
+                                    <span>Bonuses</span>
+                                    <img src="./assets/icons/Star.svg" alt="star_icon" class="info-cards">
+                                    <span class="user-info-counter">123</span>
+                                </div>
+                                <div>
+                                    <span>Books</span>
+                                    <img src="./assets/icons/book.svg" alt="book_icon" class="info-cards">
+                                    <span class="user-info-counter">23</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="get-card-wrapper">
@@ -538,9 +700,11 @@
                         <p class="get-card-text">You will be able to see a reader card after
                             logging into account or you can register a new account
                         </p>
+                        <p class="get-card-text get-card-text-hidden">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
                         <div class="btn-wrapper">
                             <button class="get-card-btn signup">Sign Up</button>
                             <button class="get-card-btn login">Log in</button>
+                            <button class="get-card-btn profile get-card-btn-hidden">Profile</button>
                         </div>
                         
                     </div>
@@ -564,11 +728,21 @@
             <div class="footer-rsschool-text">
                 <span class="rsschool-text">2023</span>
                 <a class="rsschool" href="https://rs.school/js-stage0/" target="_blank"><span class="rsschool-text">The Rolling Scopes School</span></a>
-                <a class="name" href="https://github.com/amrkov5" target="_blank"><span class="rsschool-text">@amrkov5</span></a>
+                <a class="creators-name" href="https://github.com/amrkov5" target="_blank"><span class="rsschool-text">@amrkov5</span></a>
             </div>
         </footer>
     </div>
-    <script src="./js/script.js"></script>
-    <script src="./js/burger_menu.js"></script>
+    <script type="module" src="./js/LogIn_logOut-preparations.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/burger_menu.js" type="module"></script>
+    <script src="./js/about_slider.js"></script>
+    <!-- <script src="./js/favorites_selector_v3.js"></script> -->
+    <script src="./js/favorites_selector_v1.js"></script>
+    <script type="module" src="./js/profile_menu.js"></script>
+    <script type="module" src="./js/modal_register.js"></script>
+    <script type="module" src="./js/modal_login.js"></script>
+    <script type="module" src="./js/check_user.js"></script>
+    <script type="module" src="./js/modal_profile.js"></script>
+    <script type="module" src="./js/buy_a_card.js"></script>
 </body>
 </html>
