@@ -249,26 +249,28 @@
             </section>
             <section class="favorites" id="favorites">
                 <h2 class="section__h">Favorites</h2>
-                <p class="favorites__text">Pick favorites of season</p>
-                <div class="selector-wrapper">
-                    <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="winter" checked>
-                        <label class="label" for="winter">Winter</label>
-                    </div>
-                    <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="spring">
-                        <label class="label" for="spring">Spring</label>
-                    </div>
+                <div class="selectors-container">
+                    <p class="favorites__text">Pick favorites of season</p>
+                    <div class="selector-wrapper">
                         <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="summer">
-                        <label class="label" for="summer">Summer</label>
-                    </div>
+                            <input type="radio" class = "selector" name = "seasons" id="winter" checked>
+                            <label class="label" for="winter">Winter</label>
+                        </div>
                         <div class="selector-wrap">
-                        <input type="radio" class = "selector" name = "seasons" id="autumn">
-                        <label class="label" for="autumn">Autumn</label>
+                            <input type="radio" class = "selector" name = "seasons" id="spring">
+                            <label class="label" for="spring">Spring</label>
+                        </div>
+                            <div class="selector-wrap">
+                            <input type="radio" class = "selector" name = "seasons" id="summer">
+                            <label class="label" for="summer">Summer</label>
+                        </div>
+                            <div class="selector-wrap">
+                            <input type="radio" class = "selector" name = "seasons" id="autumn">
+                            <label class="label" for="autumn">Autumn</label>
+                        </div>
                     </div>
                 </div>
-                <div class="books-wrapper winter">
+                <div class="books-wrapper winter book-wrapper-visible">
                     <div class="book-wrapper-outer">
                         <div class="book-wrapper-inner">
                             <p class="book-card-h">Staff Picks</p>
@@ -734,7 +736,8 @@
     <!-- <script src="./js/script.js"></script> -->
     <script src="./js/burger_menu.js" type="module"></script>
     <script src="./js/about_slider.js"></script>
-    <script src="./js/favorites_selector_v3.js"></script>
+    <!-- <script src="./js/favorites_selector_v3.js"></script> -->
+    <script src="./js/favorites_selector_v1.js"></script>
     <script type="module" src="./js/profile_menu.js"></script>
     <script type="module" src="./js/modal_register.js"></script>
     <script type="module" src="./js/modal_login.js"></script>

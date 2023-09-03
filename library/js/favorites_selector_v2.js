@@ -20,7 +20,6 @@ function showCard() {
 }
 
 function switchSeasons(event) {
-    // console.log(event)
     newTarget = Array.from(selectors).indexOf(event.target);
     if(newTarget != activeSeason) {
         if(isAnimating) {

@@ -3,9 +3,11 @@ const sliderArrows = document.querySelectorAll('.carret');
 const slider = document.querySelector('.image-wrapper-inner');
 let offset = 0;
 let btnPosition = 0;
+slider.style.left = `0`;
 
 function offsetWithButtons(event) {
     const btnArr = Array.from(sliderBtn);
+    slider.style.left = `${-offset}px`;
     btnArr.forEach(el => {
         if (el.classList.contains('active')) {
             el.classList.remove('active');

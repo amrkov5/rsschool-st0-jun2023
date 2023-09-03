@@ -1,34 +1,47 @@
 const selectors = document.querySelectorAll('.selector')
 const bookCards = document.querySelectorAll('.books-wrapper');
 let activeSeason = 0;
-let transition = 0;
+let transitionTarget = 0;
+let isAnimating = false;
 let newTarget = 0;
-let isAnimating = false
 
+function showCard() {
+    bookCards[activeSeason].classList.add('books-hidden');
+    bookCards[transitionTarget].classList.remove('books-hidden');
+    setTimeout(function() {
+        bookCards[transitionTarget].classList.add('book-wrapper-visible');
+    }, 0)
+    activeSeason = transitionTarget;
+    isAnimating = false
+}
 
-function switchSeasons(event) {
-    newTarget = Array.from(selectors).indexOf(event.target);
-    if(newTarget != activeSeason) {
-        if(!isAnimating) {
-            isAnimating = true;
-            transition = activeSeason;
-            activeSeason = newTarget;
-            bookCards[transition].classList.add('fading-card');
-            bookCards[transition].addEventListener('transitionend', function() {
-                bookCards[transition].classList.add('books-hidden');
-                bookCards[newTarget].classList.remove('books-hidden');
-                setTimeout(function() {
-                    bookCards[newTarget].classList.add('transition-on')
-                    bookCards[newTarget].classList.remove('fading-card');
-                    bookCards[newTarget].classList.remove('transition-on')
-                    isAnimating = false;
-                }, 1);
-            })
+function checkAnimation() {
+    if (newTarget != transitionTarget) {
+        if (isAnimating) {
+            bookCards[activeSeason].addEventListener('transitioncancel', switchSeasons)
+            bookCards[activeSeason].classList.add('transition-none');
+            bookCards[activeSeason].classList.add('books-hidden');
+            bookCards[transitionTarget].classList.remove('books-hidden');
+            bookCards[transitionTarget].classList.add('book-wrapper-visible');
+            bookCards[activeSeason].classList.remove('transition-none');
+            activeSeason = transitionTarget;
+            isAnimating = false;
+        } else {
+            switchSeasons()
         }
     }
 }
 
+function switchSeasons() {
+    isAnimating = true;
+    transitionTarget = newTarget;
+    bookCards[activeSeason].addEventListener('transitionend', showCard);
+    bookCards[activeSeason].classList.remove('book-wrapper-visible');
+}
 
 selectors.forEach(el => {
-    el.addEventListener('click', switchSeasons)
+    el.addEventListener('click', function() {
+        newTarget = Array.from(selectors).indexOf(event.target);
+        checkAnimation()
+    })
 })
