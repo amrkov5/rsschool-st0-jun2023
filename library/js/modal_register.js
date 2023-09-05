@@ -38,11 +38,19 @@ function validateInputs() {
     inputLabels.forEach(el => {
         el.classList.remove('modal-input-error');
     })
-    if (!firstLastNamePattern.test(firstNameInput.value)) {
+    // if (!firstLastNamePattern.test(firstNameInput.value)) {
+    //     inputLabels[0].classList.add('modal-input-error');
+    //     isValidated = false;
+    // }
+    // if (!firstLastNamePattern.test(lastNameInput.value)) {
+    //     inputLabels[1].classList.add('modal-input-error');
+    //     isValidated = false;
+    // }
+    if (firstNameInput.value.length == 0) {
         inputLabels[0].classList.add('modal-input-error');
         isValidated = false;
     }
-    if (!firstLastNamePattern.test(lastNameInput.value)) {
+    if (lastNameInput.value.length == 0) {
         inputLabels[1].classList.add('modal-input-error');
         isValidated = false;
     }
