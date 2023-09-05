@@ -894,6 +894,9 @@ body {
 .main .about .about-image-wrapper .carret path {
   pointer-events: none;
 }
+.main .about .about-image-wrapper .carret-incative {
+  cursor: default;
+}
 .main .about .about-image-wrapper .image-wrapper-outer {
   position: relative;
   width: 100%;

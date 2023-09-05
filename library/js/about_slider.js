@@ -29,8 +29,19 @@ function offsetWithArrows(event) {
         sliderBtn[btnPosition].classList.remove('active');
         btnPosition += 1;
     }
+    if (offset == 1900) {
+        sliderArrows[1].classList.add('carret-incative');
+    } else {
+        sliderArrows[1].classList.remove('carret-incative');
+    }
+    if (offset == 0) {
+        sliderArrows[0].classList.add('carret-incative');
+    } else {
+        sliderArrows[0].classList.remove('carret-incative');
+    }
     slider.style.left = `${-offset}px`; 
     sliderBtn[btnPosition].classList.add('active');
+
 }
 
 sliderArrows.forEach(el => {
