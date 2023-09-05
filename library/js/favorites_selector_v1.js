@@ -10,7 +10,7 @@ function showCard() {
     bookCards[transitionTarget].classList.remove('books-hidden');
     setTimeout(function() {
         bookCards[transitionTarget].classList.add('book-wrapper-visible');
-    }, 0)
+    }, 1)
     activeSeason = transitionTarget;
     isAnimating = false
 }
@@ -18,7 +18,11 @@ function showCard() {
 function checkAnimation() {
     if (newTarget != transitionTarget) {
         if (isAnimating) {
-            bookCards[activeSeason].addEventListener('transitioncancel', switchSeasons)
+            bookCards[activeSeason].addEventListener('transitioncancel', function() {
+                if (event.target == bookCards[activeSeason]) {
+                    switchSeasons()
+                }
+            })
             bookCards[activeSeason].classList.add('transition-none');
             bookCards[activeSeason].classList.add('books-hidden');
             bookCards[transitionTarget].classList.remove('books-hidden');
@@ -35,7 +39,11 @@ function checkAnimation() {
 function switchSeasons() {
     isAnimating = true;
     transitionTarget = newTarget;
-    bookCards[activeSeason].addEventListener('transitionend', showCard);
+    bookCards[activeSeason].addEventListener('transitionend', function() {
+        if (event.target == bookCards[activeSeason]) {
+            showCard()
+        }
+    });
     bookCards[activeSeason].classList.remove('book-wrapper-visible');
 }
 
