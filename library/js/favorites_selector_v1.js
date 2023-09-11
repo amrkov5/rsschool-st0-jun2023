@@ -1,5 +1,6 @@
 const selectors = document.querySelectorAll('.selector')
 const bookCards = document.querySelectorAll('.books-wrapper');
+const buyBtns = document.querySelectorAll('.buy-book-btn');
 let activeSeason = 0;
 let transitionTarget = 0;
 let isAnimating = false;
@@ -19,7 +20,9 @@ function checkAnimation() {
     if (newTarget != transitionTarget) {
         if (isAnimating) {
             bookCards[activeSeason].addEventListener('transitioncancel', function() {
-                if (event.target == bookCards[activeSeason]) {
+                console.log(event.target, Array.from(bookCards).includes(event.target));
+                if (Array.from(bookCards).includes(event.target)) {
+                    console.log('ok')
                     switchSeasons()
                 }
             })
@@ -40,7 +43,7 @@ function switchSeasons() {
     isAnimating = true;
     transitionTarget = newTarget;
     bookCards[activeSeason].addEventListener('transitionend', function() {
-        if (event.target == bookCards[activeSeason]) {
+        if (Array.from(bookCards).includes(event.target)) {
             showCard()
         }
     });
