@@ -970,7 +970,7 @@ body {
     position: relative;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main .favorites .selectors-container {
     position: sticky;
     top: 40px;
