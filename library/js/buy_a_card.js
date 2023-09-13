@@ -45,7 +45,16 @@ function validateCardInput() {
         if (el.value.length > 0) {
             isInputValidated = true;
         } else {
-            isInputValidated = false
+            isInputValidated = false;
+        }
+        if (buyCardInputs[0].value.length !== 19) {
+            isInputValidated = false;
+        }
+        if (buyCardInputs[1].value.length !== 2 && buyCardInputs[2].value.length !== 2) {
+            isInputValidated = false;
+        }
+        if(buyCardInputs[3].value.length !== 3) {
+            isInputValidated = false;
         }
         if (isInputValidated) {
             buyCardBtn.removeAttribute('disabled');

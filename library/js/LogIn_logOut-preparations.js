@@ -15,7 +15,7 @@ export function loginPreparation(userIndex) {
     const getCardBtns = document.querySelectorAll('.get-card-btn');
     profileIcon.classList.add('icon_profile_hidden');
     profileInitials.classList.remove('icon_profile_hidden');
-    profileInitials.textContent = `${userInitials}`;
+    profileInitials.textContent = `${userInitials.toUpperCase()}`;
     document.querySelector('.profile-wrapper').title = `${firstName} ${lastName}`;
     menuHead.textContent = usersDb[userIndex].cardId;
     menuHead.classList.add('menu-head-cardid');
