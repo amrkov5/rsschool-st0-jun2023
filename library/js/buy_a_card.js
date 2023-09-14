@@ -50,7 +50,7 @@ function validateCardInput() {
         if (buyCardInputs[0].value.length !== 19) {
             isInputValidated = false;
         }
-        if (buyCardInputs[1].value.length !== 2 && buyCardInputs[2].value.length !== 2) {
+        if (buyCardInputs[1].value.length !== 2 || buyCardInputs[2].value.length !== 2) {
             isInputValidated = false;
         }
         if(buyCardInputs[3].value.length !== 3) {
@@ -58,6 +58,8 @@ function validateCardInput() {
         }
         if (isInputValidated) {
             buyCardBtn.removeAttribute('disabled');
+        } else { 
+            buyCardBtn.disabled = true;
         }
     })
 }
