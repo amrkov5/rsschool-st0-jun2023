@@ -18,7 +18,7 @@ body {
     // display:none;
     background-color: #313131;
     opacity: 0.5;
-    z-index: 1;
+    z-index: 2;
 }
 .bg-hidden {
     display: none;
@@ -39,7 +39,7 @@ body {
         height: 570px;
         overflow: hidden;
         transition: 0.2s ease-in-out;
-        z-index: 2;
+        z-index: 3;
         .icons-wrapper {
             display: flex;
             justify-content: space-between;
@@ -211,7 +211,7 @@ body {
         height: 382px;
         width: 250px;
         background-color: $white;
-        z-index: 1;
+        z-index: 3;
         .register-form {
             display: flex;
             flex-direction: column;
@@ -268,7 +268,7 @@ body {
         height: 262px;
         width: 250px;
         background-color: $white;
-        z-index: 1;
+        z-index: 3;
         .login-form {
             display: flex;
             flex-direction: column;
@@ -309,7 +309,7 @@ body {
         height: 400px;
         width: 600px;
         background-color: $white;
-        z-index: 1;
+        z-index: 3;
         .profile-side {
             background-color: $dark;
             .profile-initials {
@@ -424,7 +424,7 @@ body {
         height: 540px;
         width: 640px;
         background-color: $white;
-        z-index: 1;
+        z-index: 3;
         .modal-head-part {
             background-color: $dark;
             padding-top: 10px;
