@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: black;
+
+}
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+    z-index: -1;
+}
+.main {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player-container {
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+
+
+}
+.track-logo {
+    height: 375px;
+    width: 100%;
+    overflow: hidden;
+}
+.track-cover {
+    width: 102%;
+}
+.track-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 125px;
+    background-color: rgb(120, 125, 129);
+    padding: 20px 30px;
+}
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.play-pause {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out;
+    filter:invert();
+}
+.play-pause:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.track-text {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    width: 230px;
+}
+.artist {
+    color: #56df71;
+    font-size: 24px;
+    font-weight: 600;
+}
+.title {
+    color: aliceblue;
+}
+.track-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}
+.control-btn {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+    filter:invert();
+}
+.control-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#slider {
+    position: relative;
+    appearance: none;
+    height: 12px;
+    width: 85%;
+    margin: 0 auto;
+    background-color: transparent;
+    /* overflow: hidden; */
+    cursor: pointer;
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 12px;
+    border-radius: 2px;
+    margin-top: -3.5px;
+    cursor: pointer;
+    background-color: #56df71;
+    /* box-shadow: -350px 0 0 342px #56df71; */
+}
+#slider::-webkit-slider-runnable-track {
+    background-color: black;
+    height: 5px;
+    border-radius: 2.5px;
+}
+#slider::before {
+    content: '123';
+    position: absolute;
+    bottom: -10px;
+    height: 16px;
+    width: 30px;
+}
+.header {
+    flex-grow: 0;
+}
