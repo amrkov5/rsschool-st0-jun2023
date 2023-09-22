@@ -4,7 +4,9 @@
 body {
     margin: 0;
     background-color: black;
-
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 .background {
     position: absolute;
@@ -14,13 +16,13 @@ body {
     z-index: -1;
 }
 .main {
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .player-container {
-    height: 500px;
     width: 400px;
     border-radius: 10px;
     overflow: hidden;
@@ -28,7 +30,7 @@ body {
 
 }
 .track-logo {
-    height: 375px;
+    height: 335px;
     width: 100%;
     overflow: hidden;
 }
@@ -39,9 +41,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 125px;
+    position: relative;
+    height: 150px;
     background-color: rgb(120, 125, 129);
-    padding: 20px 30px;
+    padding: 20px 30px 30px 30px;
 }
 .controls-container {
     display: flex;
@@ -94,11 +97,10 @@ body {
 #slider {
     position: relative;
     appearance: none;
-    height: 12px;
+    height: 5px;
     width: 85%;
     margin: 0 auto;
     background-color: transparent;
-    /* overflow: hidden; */
     cursor: pointer;
 }
 #slider::-webkit-slider-thumb {
@@ -106,10 +108,9 @@ body {
     width: 7px;
     height: 12px;
     border-radius: 2px;
-    margin-top: -3.5px;
+    margin-top: -4px;
     cursor: pointer;
     background-color: #56df71;
-    /* box-shadow: -350px 0 0 342px #56df71; */
 }
 #slider::-webkit-slider-runnable-track {
     background-color: black;
@@ -117,12 +118,28 @@ body {
     border-radius: 2.5px;
 }
 #slider::before {
-    content: '123';
+    content: '';
     position: absolute;
-    bottom: -10px;
-    height: 16px;
-    width: 30px;
+    /* bottom: -10px; */
+    left: 0;
+    top: 0;
+    height: 12px;
+    width: 100%;
 }
-.header {
-    flex-grow: 0;
+.time {
+    position: absolute;
+    font-size: 14px;
+}
+.start {
+    bottom: 8px;
+    left: 53px;
+    color: white;
+}
+.end {
+    right: 55px;
+    bottom: 38px;
+    color:#56df71;
+}
+.footer {
+    height: 40px;
 }
