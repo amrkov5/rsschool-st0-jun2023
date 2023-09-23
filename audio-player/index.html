@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Audio Player</title>
+</head>
+<body>
+    <audio src="./assets/audio/beyonce.mp3"></audio>
+    <img class="background" src="./assets/img/lemonade.png" alt="track background">
+    <header></header>
+    <main class="main">
+        <div class="player-container">
+            <div class="track-logo">
+                <img class="track-cover" src="./assets/img/lemonade.png" alt="">
+            </div>
+            <div class="track-container">
+                <div class="controls-container">
+                    <img class="play-pause paused" src="./assets/svg/play.png" alt="play_btn">
+                    <div class="track-text">
+                        <span class="text artist"></span>
+                        <span class="text title"></span>
+                    </div>
+                    <div class="track-controls">
+                        <img src="./assets/svg/backward.png" alt="backward_btn" class="backward control-btn">
+                        <img src="./assets/svg/forward.png" alt="forward_btn" class="forward control-btn">
+                    </div>
+                </div>
+                <div class="start time"></div>
+                <input type="range" id="slider" min="0" max="100" value="0">
+                <div class="end time"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <a href="" class="github">@amrkov5</a>
+        <span class="year">2023</span>
+        <img src="" alt="rsschool logo">
+    </footer>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

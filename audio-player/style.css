@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+    z-index: -1;
+}
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player-container {
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.track-logo {
+    height: 335px;
+    width: 100%;
+    overflow: hidden;
+}
+.track-cover {
+    width: 102%;
+}
+.track-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 150px;
+    background-color: rgb(120, 125, 129);
+    padding: 20px 30px 30px 30px;
+}
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.play-pause {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease-in-out;
+    filter:invert();
+}
+.play-pause:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.track-text {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    width: 230px;
+}
+.artist {
+    color: #56df71;
+    font-size: 24px;
+    font-weight: 600;
+}
+.title {
+    color: aliceblue;
+}
+.track-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}
+.control-btn {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+    filter:invert();
+}
+.control-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#slider {
+    position: relative;
+    appearance: none;
+    height: 5px;
+    width: 85%;
+    margin: 0 auto;
+    background-color: transparent;
+    cursor: pointer;
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 12px;
+    border-radius: 2px;
+    margin-top: -4px;
+    cursor: pointer;
+    background-color: #56df71;
+}
+#slider::-webkit-slider-runnable-track {
+    background-color: black;
+    height: 5px;
+    border-radius: 2.5px;
+}
+#slider::before {
+    content: '';
+    position: absolute;
+    /* bottom: -10px; */
+    left: 0;
+    top: -6px;
+    height: 12px;
+    width: 100%;
+}
+.time {
+    position: absolute;
+    font-size: 14px;
+}
+.start {
+    bottom: 8px;
+    left: 53px;
+    color: white;
+}
+.end {
+    right: 55px;
+    bottom: 38px;
+    color:#56df71;
+}
+.footer {
+    height: 40px;
+}
