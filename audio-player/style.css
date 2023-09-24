@@ -25,6 +25,7 @@ body {
     width: 400px;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 0 10px #000000;
 }
 .track-logo {
     height: 335px;
@@ -40,8 +41,9 @@ body {
     justify-content: space-between;
     position: relative;
     height: 150px;
-    background-color: rgb(120, 125, 129);
+    /* background-color: rgb(120, 125, 129); */
     padding: 20px 30px 30px 30px;
+    background: linear-gradient(45deg, rgb(40, 40, 40), rgb(133, 133, 133));
 }
 .controls-container {
     display: flex;
@@ -138,5 +140,25 @@ body {
     color:#56df71;
 }
 .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
     height: 40px;
+    color: white;
+}
+.footer a {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    color: white;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.footer a:visited {
+        color: white;
+}
+.footer img {
+    height: 30px;
+    width: auto;
 }
