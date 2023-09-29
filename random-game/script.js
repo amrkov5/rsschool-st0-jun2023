@@ -19,47 +19,53 @@ function setCanvasSize() {
 }
 
 bg.src = './assets/sprites/background-day.png';
-pipeTop.src = './assets/sprites/pipe-green-top.png';
-pipeBot.src = './assets/sprites/pipe-green-bot.png';
+pipeTop.src = './assets/sprites/pipe-green-top-long1.png';
+pipeBot.src = './assets/sprites/pipe-green-bot-long1.png';
 bird.src = './assets/sprites/yellowbird-upflap.png';
 base.src = './assets/sprites/base.png';
 
 let pipeY = 0;
 let birdY = 235;
+const birdX = canvas.width * 0.08
 let pipesX = 250;
 const speed = 1;
 const birdFall = 2;
 let baseArr = [];
-const pipe = [{x: 250, y: 0}]
+const pipe = [{x: 250, y: randomYPipe()}]
+let animationFrameId;
 
+//get random for pipes Y position
 function randomYPipe() {
-    min = -250;
-    max = 550;
+    const min = -510
+    const max = -(pipeTop.height - (canvas.height - 220));
+    console.log(Math.floor(Math.random() * (max - min + 1)) + min)
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//add new pipes
 function addRemovePipes() {
     if (pipe[0].x == Math.floor(canvas.width * 0.3)) {
-        pipe.push({x:canvas.width, y: 0})
+        pipe.push({x:canvas.width, y: randomYPipe()})
+    // console.log(pipe)
+
     }
     if (pipe[0].x === 0 - pipeBot.width){
         pipe.shift()
     }
 }
 
+//jumping bird
 let isUp = false;
 let birdJump = 0;
 function flap() {
-    // console.log(birdY - Math.floor(canvas.height * 0.13), Math.floor(canvas.height * 0.13), birdY)
     if (birdY >= birdJump) {
         birdY -= 7;
     } else {
         isUp = false;
     }
-    // if (i >= Math.floor(canvas.height * 0.13)) {
-    // }
 }
 
+//moving floor
 function addRemoveBase() {
     if (baseArr[baseArr.length - 1] + base.width === canvas.width ) {
         baseArr.push(canvas.width);
@@ -69,6 +75,21 @@ function addRemoveBase() {
     }
 }
 
+//collisions
+function isTouchedCollision() {
+    pipeTopCoordinate = pipe[0].y + pipeTop.height;
+    if (birdY <= 0) {
+        console.log(true)
+        cancelAnimationFrame(animationFrameId);
+    }
+    if (birdY + bird.height > canvas.height - base.height) {
+        cancelAnimationFrame(animationFrameId);
+    }
+    if (birdY >= pipeTopCoordinate && pipe[0].x < (birdX + birdX.width) && (pipe[0].x + pipeTop.width) >= birdX ) {
+        cancelAnimationFrame(animationFrameId);
+    }
+}
+//drawing the game
 function draw() {
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
     for (let i = 0; i < pipe.length; i++) {
@@ -85,10 +106,11 @@ function draw() {
     } else {
         flap()
     }
-    ctx.drawImage(bird, canvas.width * 0.08, birdY);
-    addRemovePipes()
-    addRemoveBase()
-    requestAnimationFrame(draw);
+    ctx.drawImage(bird, birdX, birdY);
+    addRemovePipes();
+    addRemoveBase();
+    animationFrameId = requestAnimationFrame(draw);
+    isTouchedCollision()
 }
 
 base.onload = function () {
@@ -96,8 +118,11 @@ base.onload = function () {
     draw();
 }
 document.addEventListener('click', () => {
-    birdJump = birdY - Math.floor(canvas.height * 0.1);
+    birdJump = birdY - Math.floor(canvas.height * 0.08);
     isUp = true;
 });
-// document.addEventListener('keydown', flap);
+document.addEventListener('keydown', () => {
+    birdJump = birdY - Math.floor(canvas.height * 0.08);
+    isUp = true;
+});
 document.addEventListener('DOMContentLoaded', setCanvasSize);
