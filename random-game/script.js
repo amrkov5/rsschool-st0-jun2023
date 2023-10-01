@@ -133,25 +133,31 @@ function addRemoveBase() {
 //collisions
 function hasTouchedCollision() {
     pipeTopCoordinate = pipe[0].y + pipeTop.height;
-    if (birdY <= 0) {
-        hit.play();
-        gameOver = true;
-        isPlaying = false;
-    }
-    if (birdY + bird.height > canvas.height - base.height) {
-        hit.play();
-        gameOver = true;
-        isPlaying = false;
-    }
-    if (birdY <= pipeTopCoordinate && pipe[0].x < (birdX + bird.width - 2) && (pipe[0].x + pipeTop.width) >= birdX) {
-        hit.play();
-        gameOver = true;
-        isPlaying = false;
-    }
-    if (birdY + bird.height >= pipeTopCoordinate + gap && pipe[0].x < (birdX + bird.width - 2) && (pipe[0].x + pipeTop.width) >= birdX) {
-        hit.play();
-        gameOver = true;
-        isPlaying = false;
+    if (isPlaying) {
+        if (birdY <= 0) {
+            hit.play();
+            saveGetResults('set');
+            gameOver = true;
+            isPlaying = false;
+        }
+        if (birdY + bird.height > canvas.height - base.height) {
+            hit.play();
+            saveGetResults('set');
+            gameOver = true;
+            isPlaying = false;
+        }
+        if (birdY <= pipeTopCoordinate && pipe[0].x < (birdX + bird.width - 2) && (pipe[0].x + pipeTop.width) >= birdX) {
+            hit.play();
+            saveGetResults('set');
+            gameOver = true;
+            isPlaying = false;
+        }
+        if (birdY + bird.height >= pipeTopCoordinate + gap && pipe[0].x < (birdX + bird.width - 2) && (pipe[0].x + pipeTop.width) >= birdX) {
+            hit.play();
+            saveGetResults('set');
+            gameOver = true;
+            isPlaying = false;
+        }
     }
 }
 
@@ -248,17 +254,29 @@ function drawCount() {
 //save results
 function saveGetResults(task) {
     const savedResult = JSON.parse(localStorage.getItem('leaderboard'));
-    if (task = 'get') {
+    if (task === 'get') {
         if (!savedResult) {
             return [];
         }
         return JSON.parse(localStorage.getItem('leaderboard'));
     }
-    if (task = 'set') {
-        if (!savedResult) {
+    if (task === 'set') {
+        if (!savedResult && gameCount > 0) {
             localStorage.setItem('leaderboard', JSON.stringify([gameCount]));
+        } else {
+            if (savedResult.length < 10 && gameCount > 0) {
+                savedResult.push(gameCount);
+                savedResult.sort((a,b) => b-a);
+                localStorage.setItem('leaderboard', JSON.stringify(savedResult));
+            } else {
+                if (savedResult[9] < gameCount && gameCount > 0) {
+                    savedResult.pop();
+                    savedResult.push(gameCount);
+                    savedResult.sort((a,b) => b-a);
+                    localStorage.setItem('leaderboard', JSON.stringify(savedResult));
+                }
+            }
         }
-
     }
 }
 
