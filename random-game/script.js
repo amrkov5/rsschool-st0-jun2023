@@ -64,8 +64,8 @@ let count = [0];
 //set canvas size
 function setCanvasWidth() {
     const width = window.innerWidth * 0.3;
-    if (width > 550) {
-        return 550;
+    if (width > 400) {
+        return 400;
     }
     if (width < 230) {
         return 230;
@@ -75,8 +75,8 @@ function setCanvasWidth() {
 
 function setCanvasHeight() {
     const height = window.innerHeight * 0.8;
-    if (height > 768) {
-        return 768;
+    if (height > 650) {
+        return 650;
     } 
     if ( height < 340) {
         return 340;
@@ -235,16 +235,18 @@ function countScore(timestamp) {
         gameCount += 1;
         isShowing = true;
         curTime = timestamp;
-        count = gameCount.toString().split().map(Number)
+        count = gameCount.toString().split('').map(Number);
     }
 }
 
 //draw game count
 function drawCount() {
+    let countOffset = canvas.width / 2 - (countDigit.width / 2);
     for (let i = 0; i < count.length; i++) {
         countDigit.src = `./assets/sprites/${count[i]}.png`;
         if (!gameOver) {
-            ctx.drawImage(countDigit, canvas.width / 2 - (countDigit.width / 2) * count.length, canvas.height * 0.25);
+            ctx.drawImage(countDigit, countOffset, canvas.height * 0.25);
+            countOffset += 25;
         } else {
             ctx.drawImage(countDigit, canvas.width / 2 - (countDigit.width / 2) * count.length, canvas.height * 0.45 + gameOverImg.height);
         }
@@ -282,7 +284,6 @@ function saveGetResults(task) {
 
 //drawing the game
 function draw(timestamp) {
-    // console.log(timestamp)
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
     for (let i = 0; i < pipe.length; i++) {
         ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
