@@ -56,7 +56,7 @@ let isInLeaderboard = false;
 let scoreGap = leaderboardH * 0.03;
 let scoreOffset = scoreGap;
 let gameOver = false;
-let gameCount = 0;
+let gameCount = 9;
 let isShowing = false;
 let curTime = 0;
 let count = [0];
@@ -241,14 +241,23 @@ function countScore(timestamp) {
 
 //draw game count
 function drawCount() {
-    let countOffset = canvas.width / 2 - (countDigit.width / 2);
+    let countOffset = 0;
+    if (count.length > 2) {
+        countOffset = canvas.width / 2 - countDigit.width;
+    } else {
+        countOffset = canvas.width / 2 - (countDigit.width / 2);
+    }
     for (let i = 0; i < count.length; i++) {
+        console.log(count[i])
         countDigit.src = `./assets/sprites/${count[i]}.png`;
         if (!gameOver) {
+            console.log(countDigit.src);
             ctx.drawImage(countDigit, countOffset, canvas.height * 0.25);
-            countOffset += 25;
+            countOffset += countDigit.width;
         } else {
-            ctx.drawImage(countDigit, canvas.width / 2 - (countDigit.width / 2) * count.length, canvas.height * 0.45 + gameOverImg.height);
+            // ctx.drawImage(countDigit, canvas.width / 2 - (countDigit.width / 2) * count.length, canvas.height * 0.45 + gameOverImg.height);
+            ctx.drawImage(countDigit, countOffset, canvas.height * 0.45 + gameOverImg.height);
+            countOffset += countDigit.width;
         }
     }
 }
