@@ -31,12 +31,13 @@ returnBtn.src = './assets/sprites/turn-back.png';
 gameOverImg.src = './assets/sprites/gameover.png';
 countDigit.src = './assets/sprites/1.png';
 
+
 //set variables
 const birdX = canvas.width * 0.08;
 const speed = 2;
 const defaultSpeed = 2;
 const gravity = 0.1;
-const pipe = [{x:canvas.width,y: (pipeTop.height - (canvas.height - 80) / 2) * -1}];
+const pipe = [];
 const gap = Math.floor(canvas.height * 0.25);
 const leaderboardW = canvas.width - canvas.width * 0.2;
 const leaderboardH = canvas.height - canvas.height * 0.2;
@@ -340,8 +341,9 @@ function draw(timestamp) {
     hasTouchedCollision()
 }
 
-base.onload = function () {
+gameOverImg.onload = function () {
     baseArr = [0, base.width];
+    pipe.push({x:canvas.width,y: (pipeTop.height - (canvas.height - 80) / 2) * -1})
     draw();
 }
 canvas.addEventListener('mousedown', clickBtns);
