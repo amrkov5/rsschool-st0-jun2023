@@ -29,10 +29,11 @@ startBtn.src = './assets/sprites/multimedia.png';
 leaderBrdBtn.src = './assets/sprites/podium.png';
 returnBtn.src = './assets/sprites/turn-back.png';
 gameOverImg.src = './assets/sprites/gameover.png';
+countDigit.src = './assets/sprites/1.png';
 
 //set variables
 const birdX = canvas.width * 0.08;
-const speed = 1;
+const speed = 2;
 const defaultSpeed = 2;
 const gravity = 0.1;
 const pipe = [{x:canvas.width,y: randomYPipe()}];
@@ -53,10 +54,10 @@ let birdY = canvas.height / 2;
 let isPlaying = false;
 let isInMenu = true;
 let isInLeaderboard = false;
-let scoreGap = leaderboardH * 0.03;
+let scoreGap = leaderboardH * 0.035;
 let scoreOffset = scoreGap;
 let gameOver = false;
-let gameCount = 0;
+let gameCount = 9;
 let isShowing = false;
 let curTime = 0;
 let count = [0];
@@ -67,8 +68,8 @@ function setCanvasWidth() {
     if (width > 400) {
         return 400;
     }
-    if (width < 230) {
-        return 230;
+    if (width < 300) {
+        return 300;
     }
     return width;
 }
@@ -78,7 +79,7 @@ function setCanvasHeight() {
     if (height > 650) {
         return 650;
     } 
-    if ( height < 340) {
+    if (height < 340) {
         return 340;
     }
     return height;
@@ -243,21 +244,27 @@ function countScore(timestamp) {
 function drawCount() {
     let countOffset = 0;
     if (count.length > 2) {
-        countOffset = canvas.width / 2 - countDigit.width;
+        countOffset = canvas.width / 2 - 26;
     } else {
-        countOffset = canvas.width / 2 - (countDigit.width / 2);
+        countOffset = canvas.width / 2 - 12;
     }
     for (let i = 0; i < count.length; i++) {
         console.log(count[i])
         countDigit.src = `./assets/sprites/${count[i]}.png`;
         if (!gameOver) {
             console.log(countDigit.src);
-            ctx.drawImage(countDigit, countOffset, canvas.height * 0.25);
-            countOffset += countDigit.width;
+            console.log(countOffset)
+            if (i === 0) {
+                ctx.drawImage(countDigit, countOffset, canvas.height * 0.25);
+            } else {
+                ctx.drawImage(countDigit, countOffset + 26 * i, canvas.height * 0.25);
+            }
         } else {
-            // ctx.drawImage(countDigit, canvas.width / 2 - (countDigit.width / 2) * count.length, canvas.height * 0.45 + gameOverImg.height);
-            ctx.drawImage(countDigit, countOffset, canvas.height * 0.45 + gameOverImg.height);
-            countOffset += countDigit.width;
+            if (i === 0) {
+                ctx.drawImage(countDigit, countOffset, canvas.height * 0.45 + gameOverImg.height);
+            } else {
+                ctx.drawImage(countDigit, countOffset + 26 * i, canvas.height * 0.45 + gameOverImg.height);
+            }
         }
     }
 }
@@ -298,7 +305,7 @@ function draw(timestamp) {
         ctx.drawImage(pipeTop, pipe[i].x, pipe[i].y);
         ctx.drawImage(pipeBot, pipe[i].x, pipeTop.height + pipe[i].y + gap);
         if (isPlaying) {
-            pipe[i].x--;
+            pipe[i].x -= speed;
         }
     }
     if (isPlaying) {

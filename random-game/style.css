@@ -20,5 +20,24 @@ body {
     /* background-color: aqua; */
 }
 .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 50px;
+    padding: 0 20px;
+}
+.footer a {
+    color: #202020;
+    text-decoration: none;
+}
+.footer a:hover {
+    cursor: pointer;
+}
+.footer a:visited {
+    color: #202020;
+    text-decoration: none;
+}
+.footer img {
+    width: 50px;
+    height: auto;
 }
