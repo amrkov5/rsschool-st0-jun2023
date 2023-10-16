@@ -36,7 +36,7 @@ const birdX = canvas.width * 0.08;
 const speed = 2;
 const defaultSpeed = 2;
 const gravity = 0.1;
-const pipe = [{x:canvas.width,y: randomYPipe()}];
+const pipe = [{x:canvas.width,y: (pipeTop.height - (canvas.height - 80) / 2) * -1}];
 const gap = Math.floor(canvas.height * 0.25);
 const leaderboardW = canvas.width - canvas.width * 0.2;
 const leaderboardH = canvas.height - canvas.height * 0.2;
@@ -57,7 +57,7 @@ let isInLeaderboard = false;
 let scoreGap = leaderboardH * 0.035;
 let scoreOffset = scoreGap;
 let gameOver = false;
-let gameCount = 9;
+let gameCount = 0;
 let isShowing = false;
 let curTime = 0;
 let count = [0];
@@ -89,18 +89,18 @@ function setCanvasHeight() {
 function randomYPipe() {
     const min = 40 - pipeTop.height;
     const max = (pipeTop.height - (canvas.height - 220)) * -1;
-    let r = Math.random()
-    let a = Math.floor(r * (max - min + 1)) + min
+    let r = Math.random();
+    let a = Math.floor(r * (max - min + 1)) + min;
     return a;
 }
 
 //add new pipes
 function addRemovePipes() {
-    if (pipe[0].x == Math.floor(canvas.width * 0.3)) {
-        pipe.push({x:canvas.width, y: randomYPipe()})
+    if (pipe[0].x >= Math.floor(canvas.width * 0.3) - 1.9 && pipe[0].x <= Math.floor(canvas.width * 0.3)) {
+        pipe.push({x:canvas.width, y: randomYPipe()});
     }
-    if (pipe[0].x === 0 - pipeBot.width){
-        pipe.shift()
+    if (pipe[0].x + pipeBot.width >= -1.9 && pipe[0].x + pipeBot.width <= 0 ){
+        pipe.shift();
     }
 }
 
@@ -249,21 +249,18 @@ function drawCount() {
         countOffset = canvas.width / 2 - 12;
     }
     for (let i = 0; i < count.length; i++) {
-        console.log(count[i])
         countDigit.src = `./assets/sprites/${count[i]}.png`;
         if (!gameOver) {
-            console.log(countDigit.src);
-            console.log(countOffset)
             if (i === 0) {
                 ctx.drawImage(countDigit, countOffset, canvas.height * 0.25);
             } else {
-                ctx.drawImage(countDigit, countOffset + 26 * i, canvas.height * 0.25);
+                ctx.drawImage(countDigit, countOffset + 24 * i, canvas.height * 0.25);
             }
         } else {
             if (i === 0) {
                 ctx.drawImage(countDigit, countOffset, canvas.height * 0.45 + gameOverImg.height);
             } else {
-                ctx.drawImage(countDigit, countOffset + 26 * i, canvas.height * 0.45 + gameOverImg.height);
+                ctx.drawImage(countDigit, countOffset + 24 * i, canvas.height * 0.45 + gameOverImg.height);
             }
         }
     }
@@ -319,7 +316,7 @@ function draw(timestamp) {
     for (let i = 0; i < baseArr.length; i++) {
         ctx.drawImage(base, baseArr[i], canvas.height - base.height);
         if (!gameOver) {
-            baseArr[i]--;
+            baseArr[i] -= speed;
         }
     }
     addRemoveBase();
