@@ -31,7 +31,6 @@ returnBtn.src = './assets/sprites/turn-back.png';
 gameOverImg.src = './assets/sprites/gameover.png';
 countDigit.src = './assets/sprites/1.png';
 
-
 //set variables
 const birdX = canvas.width * 0.08;
 const speed = 2;
@@ -46,6 +45,7 @@ const btnsX = Math.floor(canvas.width / 2) - 50;
 const startBtnY = canvas.height * 0.15 ;
 const leaderBrdBtnY = canvas.height - (canvas.height * 0.15) - 100;
 const returnBtnY = canvas.width * 0.1 + leaderboardH - 50;
+const fontName = 'FB';
 let birdFallSpeed = 2;
 let baseArr = [];
 let pipesX = 0;
@@ -217,13 +217,16 @@ function drawLeaderboard() {
         ctx.fillStyle = "#000";
         ctx.fillRect(canvas.width * 0.1 + scoreGap, canvas.width * 0.1 + scoreOffset, leaderboardW - scoreGap * 2, (leaderboardH - scoreGap * 11 - 70) / 10);
         ctx.globalAlpha = 1;
-        ctx.fillStyle = '#fff'
-        ctx.font = `${((leaderboardH - scoreGap * 11 - 70) / 10) - 1}px Arial`
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
+        ctx.font = `${((leaderboardH - scoreGap * 11 - 70) / 10) - 1}px ${fontName}`;
         const text = 'Score: ' + leaderboardArr[i];
         const textX = (canvas.width * 0.1 + scoreGap) + 5;
         const textY = canvas.width * 0.1 + scoreOffset + 2 + scoreGap;
         if (leaderboardArr[i]) {
             ctx.fillText(text, textX, textY);
+            ctx.strokeText(text, textX, textY);
         }
         scoreOffset += scoreGap + (leaderboardH - scoreGap * 11 - 70) / 10;
     }
@@ -325,6 +328,12 @@ function draw(timestamp) {
     if (isInMenu) {
         ctx.drawImage(startBtn, btnsX, startBtnY, 100, 100);
         ctx.drawImage(leaderBrdBtn, btnsX, leaderBrdBtnY, 100, 100);
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
+        ctx.font = `20px ${fontName}`
+        ctx.fillText('Press "SPACE" to flap', canvas.width / 2 - 115, canvas.height * 0.08);
+        ctx.strokeText('Press "SPACE" to flap', canvas.width / 2 - 115, canvas.height * 0.08);
     }
     if (isInLeaderboard) {
         drawLeaderboard();
