@@ -218,12 +218,15 @@ function drawLeaderboard() {
         ctx.fillRect(canvas.width * 0.1 + scoreGap, canvas.width * 0.1 + scoreOffset, leaderboardW - scoreGap * 2, (leaderboardH - scoreGap * 11 - 70) / 10);
         ctx.globalAlpha = 1;
         ctx.fillStyle = '#fff';
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
         ctx.font = `${((leaderboardH - scoreGap * 11 - 70) / 10) - 1}px ${fontName}`;
         const text = 'Score: ' + leaderboardArr[i];
         const textX = (canvas.width * 0.1 + scoreGap) + 5;
         const textY = canvas.width * 0.1 + scoreOffset + 2 + scoreGap;
         if (leaderboardArr[i]) {
             ctx.fillText(text, textX, textY);
+            ctx.strokeText(text, textX, textY);
         }
         scoreOffset += scoreGap + (leaderboardH - scoreGap * 11 - 70) / 10;
     }
